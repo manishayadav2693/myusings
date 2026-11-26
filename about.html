@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About · MYusings</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cellipse cx='86' cy='33' rx='18' ry='13' fill='%23f2210f'/%3E%3Cpath d='M16 96C17 76 19 52 22 32C28 46 34 60 41 74C47 60 53 46 59 31C60 52 61 74 62 96M66 40L85 64M106 38L85 64M85 64C85 76 84 88 86 104' fill='none' stroke='%231f1b1d' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="fonts.css">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+/* VOICE an editorial profile: confident type, quiet rules, one portrait, one scarlet accent
+   LAYOUT 200px label column + content, matching the essay and musings pages; hairline between sections
+   TYPE 'Cormorant Garamond' light for display, Geist for text */
+.wrap{max-width:1180px;margin:0 auto;padding:0 max(5vw,16px)}
+.kick{margin:0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+.hero{position:relative;padding:clamp(48px,10vh,120px) 0 clamp(48px,8vh,96px)}
+.hero h1{margin-top:22px;font-size:clamp(46px,7.4vw,108px);font-weight:300;letter-spacing:-.035em;line-height:.98;max-width:12em}
+.hero h1 b{font-weight:500;letter-spacing:-.02em}
+.hero h1 span{display:block;color:#b7b1b4}
+.stage{position:absolute;right:0;bottom:clamp(48px,8vh,96px);height:clamp(110px,14vw,170px);width:auto}
+hr{border:0;border-top:1px solid var(--hair);margin:0}
+hr.acc{border-top-color:var(--ink);width:56px;margin-bottom:-1px;position:relative}
+.row{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px 56px;padding:clamp(40px,7vh,72px) 0}
+.lead{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(32px,5vw,72px);align-items:start}
+.photo{margin:0}
+.photo .frame{aspect-ratio:4/5;background:#faf8f6;overflow:hidden;position:relative}
+.photo img.me{width:100%;height:100%;object-fit:cover;filter:saturate(.92);display:block}
+.photo img.ph{position:absolute;left:50%;bottom:-6%;height:96%;transform:translateX(-50%);opacity:.9}
+.photo figcaption{margin-top:12px;font-size:13px;color:var(--soft)}
+.copy p{margin:0 0 1.1em;font-size:clamp(19px,1.6vw,22px);line-height:1.55;max-width:30em}
+.copy p.open{font:300 clamp(24px,2.3vw,32px)/1.3 'Cormorant Garamond',Georgia,serif;letter-spacing:-.01em;margin-bottom:1em}
+.copy p.kick{font-size:12px;line-height:1.4;margin:0 0 22px}
+.path{list-style:none;margin:0;padding:0}
+.path li{display:grid;grid-template-columns:120px minmax(0,1fr) minmax(0,1.1fr);gap:4px 32px;align-items:baseline;padding:22px 0;border-top:1px solid var(--hair)}
+.path li:first-child{border-top:0;padding-top:4px}
+.path time{white-space:nowrap;font-size:14px;color:var(--soft);font-variant-numeric:tabular-nums}
+.path h3{font-size:clamp(26px,2.3vw,32px);font-weight:500}
+.path p{margin:0;color:var(--soft);font-size:16px}
+.path li.now time{color:var(--scarlet)}
+.path li.now time::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--scarlet);margin-right:8px;vertical-align:1px}
+.fills{margin:0;font:300 clamp(30px,3.6vw,52px)/1.18 'Cormorant Garamond',Georgia,serif;letter-spacing:-.025em;max-width:16em}
+.fills i{font-style:italic;font-weight:300}
+.fills .c{color:#c9c3c6}
+.sign{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:16px 40px}
+.sign a.mail{font:300 clamp(26px,3vw,40px)/1.1 'Cormorant Garamond',Georgia,serif;letter-spacing:-.02em;text-decoration:none;border-bottom:1px solid var(--scarlet)}
+.sign a.mail:hover{color:var(--scarlet)}
+.sign p{margin:8px 0 0;color:var(--soft)}
+@media(max-width:900px){.row{grid-template-columns:minmax(0,1fr);gap:20px}.lead{grid-template-columns:minmax(0,1fr)}.photo{max-width:440px}
+.path li{grid-template-columns:104px minmax(0,1fr);gap:4px 16px}.path li p{grid-column:2}.stage{height:84px;bottom:auto;top:clamp(48px,10vh,120px)}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sc" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#b80d05"/><stop offset=".55" stop-color="#f2210f"/><stop offset="1" stop-color="#ff6a45"/></linearGradient>
+    <symbol id="logo" viewBox="0 0 120 120">
+      <ellipse cx="86" cy="33" rx="17" ry="12.5" fill="url(#sc)" opacity=".92" transform="rotate(-8 86 33)"/>
+      <ellipse cx="92" cy="28" rx="9" ry="6.5" fill="#ff7a5c" opacity=".55"/>
+      <path d="M71 37C68 23 82 17 87 24C93 15 106 21 103 34M75 41C82 47 95 46 101 38" fill="none" stroke="#1f1b1d" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="86" cy="39" r="3.3" fill="#2a0a1f"/>
+      <path d="M16 96C17 76 19 52 22 32C28 46 34 60 41 74C47 60 53 46 59 31C60 52 61 74 62 96" fill="none" stroke="#1f1b1d" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M17.5 93C18.5 74 20.5 54 23.5 36M40 70C46 58 52 46 57.5 35" fill="none" stroke="#1f1b1d" stroke-width=".9" opacity=".45" stroke-linecap="round"/>
+      <path d="M66 41C72 49 78 56 85 64M106 39C99 47 92 56 85 64M85 64C85 76 84 88 86 104" fill="none" stroke="#1f1b1d" stroke-width="2.8" stroke-linecap="round"/>
+      <path d="M86 84C92 76 102 76 106 80C100 86 92 88 86 84Z" fill="#3faa4a" opacity=".75"/>
+      <path d="M86 84C93 77 101 77 105 80" fill="none" stroke="#1f1b1d" stroke-width=".8"/>
+      <circle cx="108" cy="16" r="1.7" fill="#f2210f"/><circle cx="113" cy="22" r="1" fill="#f2210f"/><circle cx="64" cy="22" r="1.3" fill="#f2210f" opacity=".7"/>
+    </symbol>
+  </defs>
+</svg>
+<header class="top">
+  <a class="mark" href="index.html" aria-label="MYusings home"><svg aria-hidden="true"><use href="#logo"/></svg><span class="wm"><b>MY</b>usings</span></a>
+  <nav aria-label="Sections"><a href="about.html" aria-current="page">About</a><a href="musings.html">Musings</a><a href="tools.html">Tools</a><a href="inseason.html">In season</a><a href="hello.html">Say hello</a></nav>
+</header>
+
+<section class="banner"><div class="txt"><p class="label"><i>Papaver rhoeas</i> · first leaves</p><h1>About</h1><p class="lede"><b>MY</b> is Manisha Yadav. The musings are mine.</p></div><img class="plant" src="img/stage-leaves.webp" alt="A watercolour poppy, first leaves"></section>
+
+<main class="wrap">
+  <section class="row" style="grid-template-columns:minmax(0,1fr)">
+    <div class="lead">
+      <figure class="photo"><div class="frame" id="frame"><img class="me" id="me" src="img/manisha.jpg" alt="Manisha Yadav"></div><figcaption id="cap" hidden>Portrait to come</figcaption></figure>
+      <div class="copy">
+        <p class="kick">In short</p>
+        <p class="open">I notice things. Then I can’t stop thinking about them until they’re written down.</p>
+        <p>I studied physics, spent three years in sales at Hindustan Unilever, and now lead a team of eleven at Samagra, working with the Government of Odisha on its programmes.</p>
+        <p>What I write here is personal: observations, opinions, and the systems I use to run my own days. I build small tools for the same reason, and a few are here if you’d like to use them.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+  <section class="row">
+    <p class="kick">The way here</p>
+    <ol class="path"><li class="now"><time>2023 — now</time><h3>Samagra</h3><p>Governance. State Lead, Odisha</p></li><li><time>2020 — 23</time><h3>Hindustan Unilever</h3><p>Sales, across modern and general trade</p></li><li><time>2018 — 20</time><h3>IIM Ahmedabad</h3><p>MBA</p></li><li><time>2017 — 18</time><h3>Honest Farmer</h3><p>Brand and growth, founder’s office</p></li><li><time>2015 — 17</time><h3>EY</h3><p>Account coordinator, EY GBS</p></li><li><time>2012 — 15</time><h3>Gargi College</h3><p>B.Sc. (Hons.) Physics, University of Delhi</p></li></ol>
+  </section>
+
+  <hr>
+  <section class="row">
+    <p class="kick">What fills me</p>
+    <p class="fills">Spirituality<span class="c">,</span> fitness<span class="c">,</span> nature<span class="c">,</span> and <i>noticing all things, big and small.</i></p>
+  </section>
+
+  <hr>
+  <section class="row">
+    <p class="kick">Write to me</p>
+    <div class="sign"><div><a class="mail" href="mailto:hello@myusings.com">hello@myusings.com</a><p>I read everything, slowly.</p></div></div>
+  </section>
+</main>
+
+<footer><a class="mark" href="index.html" aria-label="MYusings home"><svg aria-hidden="true"><use href="#logo"/></svg><span class="wm"><b>MY</b>usings</span></a><span>© 2026 Manisha Yadav. Grown slowly at myusings.com</span></footer>
+<script>
+{
+const me=document.getElementById('me'),noPic=()=>{const i=new Image();i.className='ph';i.alt='';i.src='img/poppy-bloom.webp';me.replaceWith(i);document.getElementById('cap').hidden=false};
+if(me.complete&&!me.naturalWidth)noPic();else me.addEventListener('error',noPic);
+}
+</script>
+</body>
+</html>

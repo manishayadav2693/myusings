@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Musings · MYusings</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cellipse cx='86' cy='33' rx='18' ry='13' fill='%23f2210f'/%3E%3Cpath d='M16 96C17 76 19 52 22 32C28 46 34 60 41 74C47 60 53 46 59 31C60 52 61 74 62 96M66 40L85 64M106 38L85 64M85 64C85 76 84 88 86 104' fill='none' stroke='%231f1b1d' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="fonts.css">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+/* VOICE quiet contents page
+   LAYOUT year column on the left, one ruled row per musing: title, one-line excerpt, reading time
+   TYPE 'Cormorant Garamond' for titles and the year, Geist for everything else */
+.wrap{max-width:1180px;margin:0 auto;padding:0 max(5vw,16px)}
+
+
+
+
+
+
+.year{padding-top:clamp(40px,7vh,72px);display:grid;grid-template-columns:200px minmax(0,1fr);gap:0 56px;padding-bottom:56px}
+.year h2{font-size:clamp(40px,4.4vw,56px);font-weight:400;position:sticky;top:24px;align-self:start}
+.year h2 small{display:block;margin-top:8px;font:400 14px/1 Geist,system-ui,sans-serif;letter-spacing:0;color:var(--soft)}
+.list{list-style:none;margin:0;padding:0}
+.row{position:relative;padding:26px 0 28px;border-bottom:1px solid var(--hair)}
+.row:first-child{padding-top:6px}
+.row h3{font-size:29px;font-weight:500;line-height:1.25}
+.row h3 a{text-decoration:none}
+.row h3 a::after{content:"";position:absolute;inset:0}
+.row:hover h3{color:var(--scarlet)}
+.row p{margin:8px 0 0;color:var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .meta{margin-top:8px;font-size:14px;color:var(--soft)}
+.new{margin-left:12px;font:400 14px/1 Geist,system-ui,sans-serif;color:var(--scarlet);white-space:nowrap;vertical-align:middle}
+.new::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--scarlet);margin-right:7px;vertical-align:1px}
+@media(max-width:860px){
+.year{grid-template-columns:minmax(0,1fr)}.year h2{position:static;margin-bottom:18px}.row p{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sc" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#b80d05"/><stop offset=".55" stop-color="#f2210f"/><stop offset="1" stop-color="#ff6a45"/></linearGradient>
+    <symbol id="logo" viewBox="0 0 120 120">
+      <ellipse cx="86" cy="33" rx="17" ry="12.5" fill="url(#sc)" opacity=".92" transform="rotate(-8 86 33)"/>
+      <ellipse cx="92" cy="28" rx="9" ry="6.5" fill="#ff7a5c" opacity=".55"/>
+      <path d="M71 37C68 23 82 17 87 24C93 15 106 21 103 34M75 41C82 47 95 46 101 38" fill="none" stroke="#1f1b1d" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="86" cy="39" r="3.3" fill="#2a0a1f"/>
+      <path d="M16 96C17 76 19 52 22 32C28 46 34 60 41 74C47 60 53 46 59 31C60 52 61 74 62 96" fill="none" stroke="#1f1b1d" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M17.5 93C18.5 74 20.5 54 23.5 36M40 70C46 58 52 46 57.5 35" fill="none" stroke="#1f1b1d" stroke-width=".9" opacity=".45" stroke-linecap="round"/>
+      <path d="M66 41C72 49 78 56 85 64M106 39C99 47 92 56 85 64M85 64C85 76 84 88 86 104" fill="none" stroke="#1f1b1d" stroke-width="2.8" stroke-linecap="round"/>
+      <path d="M86 84C92 76 102 76 106 80C100 86 92 88 86 84Z" fill="#3faa4a" opacity=".75"/>
+      <path d="M86 84C93 77 101 77 105 80" fill="none" stroke="#1f1b1d" stroke-width=".8"/>
+      <circle cx="108" cy="16" r="1.7" fill="#f2210f"/><circle cx="113" cy="22" r="1" fill="#f2210f"/><circle cx="64" cy="22" r="1.3" fill="#f2210f" opacity=".7"/>
+    </symbol>
+  </defs>
+</svg>
+<header class="top">
+  <a class="mark" href="index.html" aria-label="MYusings home"><svg aria-hidden="true"><use href="#logo"/></svg><span class="wm"><b>MY</b>usings</span></a>
+  <nav aria-label="Sections"><a href="about.html">About</a><a href="musings.html" aria-current="page">Musings</a><a href="tools.html">Tools</a><a href="inseason.html">In season</a><a href="hello.html">Say hello</a></nav>
+</header>
+
+<section class="banner"><div class="txt"><p class="label"><i>Papaver rhoeas</i> · in bud</p><h1>Musings</h1><p class="lede" id="count"></p></div><img class="plant" src="img/stage-bud.webp" alt="A watercolour poppy, in bud"></section>
+
+<main class="wrap">
+  <div id="years"></div>
+</main>
+
+<footer><a class="mark" href="index.html" aria-label="MYusings home"><svg aria-hidden="true"><use href="#logo"/></svg><span class="wm"><b>MY</b>usings</span></a><span>© 2026 Manisha Yadav. Grown slowly at myusings.com</span></footer>
+
+<script src="posts.js"></script>
+<script>
+{
+const P=window.POSTS;
+const el=(t,c,txt)=>{const e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e};
+document.getElementById('count').textContent=P.length===1?'One musing so far.':P.length+' musings so far.';
+const by={};P.forEach(p=>{const y=p.iso.slice(0,4);(by[y]=by[y]||[]).push(p)});
+document.getElementById('years').replaceChildren(...Object.keys(by).sort().reverse().map(y=>{
+  const sec=el('section','year');const h=el('h2',null,y);h.append(el('small',null,by[y].length+(by[y].length===1?' musing':' musings')));
+  const ol=el('ol','list');
+  by[y].forEach(p=>{const li=el('li','row');const h3=el('h3');const a=el('a',null,p.title);a.href='post.html#'+p.slug;h3.append(a);
+    li.append(h3,el('p',null,p.excerpt),el('div','meta',p.mins+' min read'));ol.append(li)});
+  sec.append(h,ol);return sec}));
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MYusings</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cellipse cx='86' cy='33' rx='18' ry='13' fill='%23f2210f'/%3E%3Cpath d='M16 96C17 76 19 52 22 32C28 46 34 60 41 74C47 60 53 46 59 31C60 52 61 74 62 96M66 40L85 64M106 38L85 64M85 64C85 76 84 88 86 104' fill='none' stroke='%231f1b1d' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="fonts.css">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=La+Belle+Aurore&display=swap" rel="stylesheet">
+<style>
+/* VOICE hushed and personal, an ink-and-watercolour sketchbook on white paper
+   IDEA one meadow seen in depth: the words stand in the field, between a far row of poppies and grass close to the eye
+   PICTURE a large ink-and-wash poppy that grows sprout, bud, bloom, petal fall, seed pod as you read, with distant poppies behind the text and grass in front
+   COLOUR pure white, near-black ink, poppy pink-red with violet heart, scarlet for the brand, leaf green
+   TYPE 'Cormorant Garamond' for display (MY heavier than usings) + Geist for text
+   LAYOUT desktop: three depth layers (far meadow, text, near poppy and grass) moving at different rates with the cursor; phone: poppy pinned on top, text beneath */
+:root{color-scheme:light;--paper:#fff;--ink:#1f1b1d;--soft:#6f686c;--hair:#ecebeb;--scarlet:#f2210f;--pink:#ff4f9a;--violet:#8b45c9;--leaf:#3faa4a}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:24px}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.7 Geist,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+a:focus-visible{outline:2px solid var(--scarlet);outline-offset:3px;border-radius:4px}
+svg{overflow:hidden}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;letter-spacing:-.02em;line-height:1.08;margin:0;text-wrap:balance}
+.wm{font:400 21px/1 'Cormorant Garamond',Georgia,serif;letter-spacing:-.01em}
+.wm b,.hero h1 b{font-weight:560;letter-spacing:0}
+.top{display:flex;flex-wrap:wrap;gap:10px 28px;align-items:center;justify-content:space-between;padding:18px max(4vw,16px);position:relative;z-index:3}
+.mark{display:flex;gap:8px;align-items:center;text-decoration:none}
+.mark svg{width:38px;height:38px}
+.top nav{display:flex;flex-wrap:wrap;gap:4px 24px;align-items:center;font-size:15px}
+.top nav a{text-decoration:none;padding:10px 0;color:var(--soft)}
+.top nav a:hover{color:var(--ink)}
+.pill{display:inline-flex;gap:10px;align-items:center;min-height:44px;padding:0 20px;border-radius:999px;font-size:15px;font-weight:500;text-decoration:none;border:1px solid var(--ink);background:#fff}
+.pill.dark{background:var(--ink);color:#fff}
+.pill:hover{border-color:var(--scarlet)}
+.pill svg{width:16px;height:16px}
+.top nav .pill{color:#fff;padding:0 18px}
+.hero{position:relative;text-align:center;padding:clamp(64px,13vh,150px) max(5vw,16px) 0;display:grid;justify-items:center;gap:22px}
+.hero h1{font-size:clamp(60px,9.5vw,128px);line-height:.98;font-weight:330}
+.hero p{margin:0;max-width:31em;color:var(--soft);font-size:18px}
+.hero .note{font-size:14px}
+.sprig{position:absolute;top:0;right:max(3vw,12px);width:clamp(150px,17vw,240px);height:auto;pointer-events:none}
+.meadow{position:relative;width:100%;height:240px;margin-top:clamp(20px,5vh,60px)}
+.meadow svg,.meadow canvas{position:absolute;left:0;bottom:0;width:100%;display:block;pointer-events:none}
+.meadow svg{height:200px}
+.meadow canvas{height:100%}
+.sw{transform-box:fill-box;transform-origin:50% 100%;animation:sway 6s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(4deg)}}
+#swayg{transform-box:view-box;transform-origin:200px 540px;animation:psway 8s ease-in-out infinite}
+@keyframes psway{0%,100%{transform:rotate(-1deg)}50%{transform:rotate(1.4deg)}}
+@media(prefers-reduced-motion:reduce){.sw,#swayg{animation:none}}
+.story{position:relative}
+.ch{position:relative;z-index:1;padding:clamp(56px,10vw,140px) max(5vw,16px);display:flex;flex-direction:column;justify-content:center;gap:22px}
+.ch>*{max-width:500px}
+.ch h2{font-size:clamp(34px,3.6vw,46px)}
+.ch h2::before{content:"";display:block;width:46px;height:22px;margin-bottom:16px;background:radial-gradient(circle at 22% 55%,var(--scarlet) 0 6px,transparent 7.5px),radial-gradient(circle at 52% 35%,color-mix(in srgb,var(--scarlet) 55%,#fff) 0 3.5px,transparent 5px),radial-gradient(circle at 74% 70%,var(--scarlet) 0 2px,transparent 3px),radial-gradient(circle at 92% 30%,color-mix(in srgb,var(--scarlet) 70%,#fff) 0 1.4px,transparent 2.4px);opacity:.85}
+.ch p{margin:0}
+.quiet{color:var(--soft)}
+.rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--hair)}
+.rows li{padding:20px 0;border-bottom:1px solid var(--hair);display:grid;gap:6px}
+.when{font-size:14px;color:var(--soft);white-space:nowrap}
+.rows h3{font-size:28px;font-weight:500}
+.rows h3 a{text-decoration:none}
+.rows h3 a:hover{color:var(--violet)}
+.rows p{color:var(--soft)}
+.tool{grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:24px}
+.tool h3{display:flex;gap:12px;align-items:center}
+.tool h3 i{width:16px;height:14px;border-radius:52% 48% 55% 45%;flex:none;background:radial-gradient(circle at 60% 65%,var(--c),color-mix(in srgb,var(--c) 45%,#fff));opacity:.9}
+.tool .pill{grid-row:1 / span 2;grid-column:2;min-height:40px;padding:0 16px}
+.now{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:16px 32px;margin:0}
+.now dt{font:400 19px/1.5 'Cormorant Garamond',Georgia,serif;white-space:nowrap}
+.now dd{margin:0;color:var(--soft)}
+.mail{font:400 clamp(28px,3.4vw,42px)/1.15 'Cormorant Garamond',Georgia,serif;letter-spacing:-.02em;overflow-wrap:anywhere}
+.mail a{text-decoration-color:var(--scarlet);text-decoration-thickness:1px;text-underline-offset:6px}
+.links{display:flex;flex-wrap:wrap;gap:12px}
+.front{position:sticky;top:0;height:46svh;z-index:2;background:#fff;border-bottom:1px solid var(--hair);overflow:hidden}
+.back{display:none}
+.scene{display:contents}
+.mid{position:absolute;inset:0;will-change:transform}
+#ground,#far,#near{position:absolute;inset:0;width:100%;height:100%}
+#art{position:absolute;left:0;top:0;width:100%;height:100%}
+#near,.index{display:none}
+.cap{position:absolute;left:max(4vw,16px);top:12px;margin:0;font:400 18px/1.3 'Cormorant Garamond',Georgia,serif;letter-spacing:.02em;color:var(--soft)}
+.sign{font:400 26px/1.2 'La Belle Aurore',cursive;color:#2c3a6b;margin-top:4px!important}
+footer{position:relative;z-index:3;background:#fff;display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between;padding:36px max(4vw,16px) 44px;font-size:14px;color:var(--soft);border-top:1px solid var(--hair)}
+footer .mark svg{width:30px;height:30px}
+@media(max-width:699px){.ch{min-height:70svh}}
+@media(max-width:999px){.now{grid-template-columns:minmax(0,1fr);gap:2px}.now dd{margin-bottom:14px}.sprig{display:none}}
+@media(max-width:600px){.tool{grid-template-columns:minmax(0,1fr)}.tool .pill{grid-row:auto;grid-column:auto;justify-self:start;margin-top:6px}.top{padding-bottom:6px}.top nav{width:100%;gap:2px 18px;font-size:14px}.top nav a{padding:8px 0}}
+@media(min-width:700px){
+.scene{display:block;position:absolute;inset:0;pointer-events:none}
+.scene.b{z-index:0}
+.scene.f{z-index:2}
+.back,.front{display:block;position:sticky;top:0;height:100vh;background:none;border:0}
+.back{z-index:0;overflow:hidden}
+.front{pointer-events:none}
+#art{left:50%;width:50%}
+#near{display:block}
+.ch{margin-left:190px;width:min(500px,calc(56vw - 214px));min-height:100vh;padding:120px 0}
+#art{left:56%;width:44%}
+.index{display:block;position:absolute;left:max(3vw,24px);top:50%;transform:translateY(-50%);pointer-events:auto}
+.index a{display:flex;gap:10px;align-items:center;padding:7px 0;font-size:14px;color:var(--soft);text-decoration:none}
+.index a::before{content:"";height:1px;width:10px;background:currentColor;flex:none;opacity:.5;transition:width .35s ease,opacity .35s ease}
+.index a:hover::before{width:22px;opacity:1}
+.index a.on{color:var(--ink)}
+.index a.on::before{width:22px;opacity:1;background:var(--ink)}
+.cap{left:auto;right:max(3vw,24px);top:30px;font-size:19px}}
+@media(min-width:1100px){.ch{margin-left:clamp(200px,15vw,250px);width:min(500px,33vw)}#art{left:50%;width:50%}.index a{font-size:15px}.index a.on::before{width:34px}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sc" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#b80d05"/><stop offset=".55" stop-color="#f2210f"/><stop offset="1" stop-color="#ff6a45"/></linearGradient>
+    <symbol id="logo" viewBox="0 0 120 120">
+      <ellipse cx="86" cy="33" rx="17" ry="12.5" fill="url(#sc)" opacity=".92" transform="rotate(-8 86 33)"/>
+      <ellipse cx="92" cy="28" rx="9" ry="6.5" fill="#ff7a5c" opacity=".55"/>
+      <path d="M71 37C68 23 82 17 87 24C93 15 106 21 103 34M75 41C82 47 95 46 101 38" fill="none" stroke="#1f1b1d" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="86" cy="39" r="3.3" fill="#2a0a1f"/>
+      <path d="M16 96C17 76 19 52 22 32C28 46 34 60 41 74C47 60 53 46 59 31C60 52 61 74 62 96" fill="none" stroke="#1f1b1d" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M17.5 93C18.5 74 20.5 54 23.5 36M40 70C46 58 52 46 57.5 35" fill="none" stroke="#1f1b1d" stroke-width=".9" opacity=".45" stroke-linecap="round"/>
+      <path d="M66 41C72 49 78 56 85 64M106 39C99 47 92 56 85 64M85 64C85 76 84 88 86 104" fill="none" stroke="#1f1b1d" stroke-width="2.8" stroke-linecap="round"/>
+      <path d="M86 84C92 76 102 76 106 80C100 86 92 88 86 84Z" fill="#3faa4a" opacity=".75"/>
+      <path d="M86 84C93 77 101 77 105 80" fill="none" stroke="#1f1b1d" stroke-width=".8"/>
+      <circle cx="108" cy="16" r="1.7" fill="#f2210f"/><circle cx="113" cy="22" r="1" fill="#f2210f"/><circle cx="64" cy="22" r="1.3" fill="#f2210f" opacity=".7"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <a class="mark" href="#top" aria-label="MYusings home"><svg aria-hidden="true"><use href="#logo"/></svg><span class="wm"><b>MY</b>usings</span></a>
+  <nav aria-label="Sections"><a href="about.html">About</a><a href="musings.html">Musings</a><a href="tools.html">Tools</a><a href="inseason.html">In season</a><a href="hello.html">Say hello</a></nav>
+</header>
+
+<section class="hero" id="top">
+  <svg class="sprig" id="sprig" viewBox="0 0 260 330" aria-hidden="true"></svg>
+  <h1><b>MY</b>usings</h1>
+  <p>Notes on life, seen in colour: observations on society, fitness, and the things I build.</p>
+  <a class="pill dark" href="musings.html">Read the musings <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  <div class="meadow"><svg id="horizon" viewBox="0 0 1200 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg><canvas id="wind" aria-hidden="true"></canvas></div>
+</section>
+
+<main class="story">
+  <div class="scene b"><div class="back" aria-hidden="true"><svg id="far"></svg></div></div>
+  <div class="scene f"><div class="front">
+    <div class="mid" id="mid">
+      <svg id="ground" aria-hidden="true"></svg>
+      <svg id="art" viewBox="0 0 400 600" preserveAspectRatio="xMidYMax meet" role="img" aria-label="An ink and watercolour poppy that grows from seed to seed pod as the page scrolls">
+        <defs>
+          <radialGradient id="pg" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="120"><stop offset="0" stop-color="#2a0806"/><stop offset=".15" stop-color="#b8241a"/><stop offset=".42" stop-color="#e8402a"/><stop offset=".78" stop-color="#f47a5e"/><stop offset="1" stop-color="#fbd3c6"/></radialGradient>
+          <radialGradient id="bl"><stop offset="0" stop-color="#140808" stop-opacity=".95"/><stop offset=".6" stop-color="#3a0c08" stop-opacity=".45"/><stop offset="1" stop-color="#3a0c08" stop-opacity="0"/></radialGradient>
+          <radialGradient id="cupg"><stop offset="0" stop-color="#a81c0e" stop-opacity=".9"/><stop offset=".35" stop-color="#e2452c" stop-opacity=".7"/><stop offset=".75" stop-color="#f58a6a" stop-opacity=".5"/><stop offset="1" stop-color="#f9b29c" stop-opacity="0"/></radialGradient>
+          <linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#5f7d4e"/><stop offset=".6" stop-color="#8fae7a"/><stop offset="1" stop-color="#c3d1a6"/></linearGradient>
+        </defs>
+        <g id="swayg"><g id="plant">
+          <g id="roots" fill="none" stroke="#1f1b1d" stroke-width=".7" stroke-linecap="round" opacity=".75">
+            <path pathLength="1" d="M200 557C199 567 203 576 200 594"/>
+            <path pathLength="1" d="M199 561C193 569 187 574 183 587"/>
+            <path pathLength="1" d="M201 560C207 567 214 571 219 585"/>
+          </g>
+          <g id="seedg" transform="translate(200 552) scale(1.5)"></g>
+          <g id="sides"></g>
+          <g id="leaves"></g>
+          <path id="stemw" fill="none" stroke="#8aa877" stroke-width="4.6" stroke-linecap="round" opacity=".5"/>
+          <path id="stem1" fill="none" stroke="#56704a" stroke-width=".8" stroke-linecap="round" opacity=".7"/>
+          <path id="stem2" fill="none" stroke="#dbe5c8" stroke-width=".6" stroke-linecap="round" opacity=".5"/>
+          <path id="stemhair" fill="none" stroke="#5f7a4e" stroke-width=".45" stroke-linecap="round" opacity=".7"/>
+          <g id="coty"></g>
+          <g id="head"><g id="drops"></g><g id="petals"></g><g id="stam"></g><g id="pod"></g><g id="petalsF"></g><g id="bud"></g></g>
+          <g id="fly" fill="#1f1b1d"></g>
+        </g></g>
+      </svg>
+    </div>
+    <svg id="near" aria-hidden="true"></svg>
+    <nav class="index" aria-label="On this page" id="index"><a href="#about">About</a><a href="#musings">Musings</a><a href="#tools">Tools</a><a href="#now">In season</a><a href="#hello">Say hello</a></nav>
+    <p class="cap" id="cap"><i>Papaver rhoeas</i> · first leaves</p>
+  </div></div>
+
+  <section class="ch" id="about" style="--a:#3faa4a">
+    <h2>Where I'm rooted</h2>
+    <p>I work on public systems in Odisha, helping government programmes reach the people they are meant for. Before that I worked in sales at Hindustan Unilever, studied at IIM Ahmedabad, and began in physics at Gargi College.</p>
+    <p class="quiet">I notice the world in colours first. This is where those colours turn into words, and where I keep the small tools I build to make ordinary days run a little better.</p>
+    <p><a class="pill" href="about.html">More about me <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+  </section>
+
+  <section class="ch" id="musings" style="--a:#8b45c9">
+    <h2>Musings, still unfolding</h2>
+    <ol class="rows" id="latest"></ol>
+    <p><a class="pill" href="musings.html">All musings <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+  </section>
+
+  <section class="ch" id="tools" style="--a:#ff4f9a">
+    <h2>Things I've made</h2>
+    <ul class="rows">
+      <li class="tool" style="--c:#f2210f"><h3><i></i>LatLong</h3><p>Places, pinned to their coordinates.</p><a class="pill" href="tools/latlong.html">Open</a></li>
+      <li class="tool" style="--c:#3faa4a"><h3><i></i>Quiet Routine</h3><p>Gentle structure for the days that need it.</p><a class="pill" href="tools/quiet-routine/index.html">Open</a></li>
+      <li class="tool" style="--c:#8b45c9"><h3><i></i>Planner</h3><p>The week ahead, in one calm view.</p><a class="pill" href="tools/planner.html">Open</a></li>
+    </ul>
+  </section>
+
+  <section class="ch" id="now" style="--a:#d61f7a">
+    <h2>In season</h2>
+    <p class="when">Updated November 2026</p>
+    <dl class="now">
+      <dt>Planting</dt><dd>A new idea I am still keeping quiet, and a habit of writing every Sunday.</dd>
+      <dt>Tending</dt><dd>The work in Odisha, and the small apps that keep my days in order.</dd>
+      <dt>In bloom</dt><dd>This website, finally out in the world.</dd>
+      <dt>Letting go</dt><dd>The need to finish everything I start.</dd>
+    </dl>
+  </section>
+
+  <section class="ch" id="hello" style="--a:#f2210f">
+    <h2>Scatter a seed</h2>
+    <p class="quiet">Write to me about an idea, a colour, or something you've built. I read everything, slowly.</p>
+    <p class="mail"><a href="mailto:hello@myusings.com">hello@myusings.com</a></p>
+    <p class="sign">— Manisha</p>
+    <p class="links"><a class="pill" href="https://www.linkedin.com/">LinkedIn</a><a class="pill" href="musings.html">Musings</a><a class="pill" href="#tools">Tools</a></p>
+  </section>
+</main>
+
+<footer><a class="mark" href="#top" aria-label="MYusings home"><svg aria-hidden="true"><use href="#logo"/></svg><span class="wm"><b>MY</b>usings</span></a><span>© 2026 Manisha Yadav. Grown slowly at myusings.com</span></footer>
+
+<script src="posts.js"></script>
+<script src="paint.js"></script>
+<script>
+{
+const $=id=>document.getElementById(id);
+
+{const L=$('latest');(window.POSTS||[]).slice(0,3).forEach(p=>{const li=document.createElement('li'),w=document.createElement('span'),h=document.createElement('h3'),a=document.createElement('a'),e=document.createElement('p');w.className='when';w.textContent=p.date+' · '+p.mins+' min read';a.href='post.html#'+p.slug;a.textContent=p.title;h.append(a);e.textContent=p.excerpt;li.append(w,h,e);L.append(li)})}
+const NS='http://www.w3.org/2000/svg';
+let sv=23;
+const rnd=()=>(sv=sv*16807%2147483647)/2147483647;
+const f1=n=>(+n).toFixed(1);
+const ease=x=>x<=0?0:x>=1?1:x*x*(3-2*x);
+const ramp=(u,a,b)=>ease((u-a)/(b-a));
+const lerp=(a,b,t)=>a+(b-a)*t;
+const kf=(u,v)=>{const i=Math.min(Math.floor(u),v.length-2);return lerp(v[i],v[i+1],ease(u-i))};
+const hx=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const mix=(a,b,t)=>{const A=hx(a),B=hx(b);return 'rgb('+A.map((x,i)=>Math.round(x+(B[i]-x)*t)).join(',')+')'};
+const cr=(p,open)=>{const n=p.length;let d='M'+f1(p[0][0])+','+f1(p[0][1]);const L=open?n-1:n;for(let i=0;i<L;i++){const a=p[open?Math.max(i-1,0):(i-1+n)%n],b=p[i],c=p[(i+1)%n],e=p[open?Math.min(i+2,n-1):(i+2)%n];d+='C'+f1(b[0]+(c[0]-a[0])/6)+','+f1(b[1]+(c[1]-a[1])/6)+' '+f1(c[0]-(e[0]-b[0])/6)+','+f1(c[1]-(e[1]-b[1])/6)+' '+f1(c[0])+','+f1(c[1])}return d+(open?'':'Z')};
+const jit=(p,j)=>p.map(([x,y])=>[x+(rnd()-.5)*j,y+(rnd()-.5)*j]);
+const ell=(cx,cy,rx,ry,j)=>{const p=[];for(let i=0;i<14;i++){const a=i/14*Math.PI*2,k=1+(rnd()-.5)*j;p.push([cx+Math.cos(a)*rx*k,cy+Math.sin(a)*ry*k])}return p};
+const INK='stroke="#1f1b1d" fill="none" stroke-linecap="round" stroke-linejoin="round"';
+const wash=(p,fill,op,s=.9,dx=0,dy=0)=>'<path d="'+cr(jit(p.map(([x,y])=>[x*s+dx,y*s+dy]),2.5))+'" fill="'+fill+'" opacity="'+op+'"/>';
+const line=(p,w=.75,op=.9,cut=2)=>{const q=jit(p,1.1);return '<path d="'+cr(q.slice(0,q.length-cut),true)+'" '+INK+' stroke-width="'+w+'" opacity="'+op+'"/>'};
+const wc=(p,fill,op,o={})=>wash(p,fill,op,o.s||.9,o.dx||0,o.dy||0)+(o.second?wash(p,o.second,o.sop||.3,.68,o.sdx||0,o.sdy||0):'')+line(o.ls?p.map(([x,y])=>[x*o.ls,y*o.ls]):p,o.w,o.lop,o.cut);
+const rot=(p,deg)=>{const a=deg*Math.PI/180,c=Math.cos(a),s=Math.sin(a);return p.map(([x,y])=>[x*c-y*s,x*s+y*c])};
+const mv=(p,dx,dy)=>p.map(([x,y])=>[x+dx,y+dy]);
+const dots=(n,cx,cy,rx,ry,cols,rmax)=>{let h='';for(let i=0;i<n;i++){const a=rnd()*Math.PI*2,r=Math.sqrt(rnd());h+='<circle cx="'+f1(cx+Math.cos(a)*rx*r)+'" cy="'+f1(cy+Math.sin(a)*ry*r)+'" r="'+f1(.6+rnd()*rmax)+'" fill="'+cols[i%cols.length]+'" opacity="'+f1(.45+rnd()*.45)+'"/>'}return h};
+const blade=(x,y,h,lean)=>'M'+f1(x)+','+f1(y)+'q'+f1(lean*.3)+','+f1(-h*.55)+' '+f1(lean)+','+f1(-h);
+const calm=matchMedia('(prefers-reduced-motion: reduce)');
+
+/* ---------- the poppy ---------- */
+const petalPts=(R,sp)=>{const p=[[-5,-2]];const s=Math.sin(sp*.85),c=Math.cos(sp*.85);p.push([-R*.42*s,-R*.42*c]);const N=12;for(let k=0;k<=N;k++){const th=-sp+2*sp*k/N;const r=R*(.8+.2*Math.sin(Math.PI*k/N))*(1+(rnd()-.5)*.12);p.push([r*Math.sin(th),-r*Math.cos(th)])}p.push([R*.42*s,-R*.42*c]);p.push([5,-2]);return p};
+const PET=[{bx:-5,by:-18,rot:-31,sx:1,sy:.95,R:104,dx:-50,fr:-95,dl:2},{bx:5,by:-18,rot:29,sx:1.02,sy:.97,R:108,dx:62,fr:100,dl:3},{bx:-4,by:-15,rot:-156,sx:1.15,sy:.42,R:100,dx:-104,fr:-178,dl:0,front:1},{bx:4,by:-15,rot:154,sx:1.15,sy:.42,R:102,dx:100,fr:178,dl:1,front:1}];
+/* a ruffled petal outline: many points, uneven radius, a few small notches like torn tissue */
+const ruffle=(R,sp)=>{const side=sg=>[[.2,.55],[.42,.8],[.63,.93]].map(([r,f])=>[sg*R*r*Math.sin(sp*f),-R*r*Math.cos(sp*f)]);const p=[[-10,-2],...side(-1)];const N=30,ph=rnd()*6;for(let k=0;k<=N;k++){const th=-sp+2*sp*k/N;let r=R*(.8+.2*Math.sin(Math.PI*k/N))*(1+.022*Math.sin(k*1.9+ph)+(rnd()-.5)*.028);if(rnd()<.05)r*=.965;p.push([r*Math.sin(th),-r*Math.cos(th)])}p.push(...side(1).reverse(),[10,-2]);return p};
+const PPTS=[];
+{const mk=(p,i)=>{const pts=ruffle(p.R,.98);PPTS.push(pts);return '<g class="pt" data-i="'+i+'"><g class="w">'+wash(pts,'url(#pg)','.6',1,2,-2)+'<ellipse cx="0" cy="-20" rx="13" ry="17" fill="url(#bl)"/></g></g>'};
+ const html=PET.map(mk);$('petals').innerHTML=PET.map((p,i)=>p.front?'':html[i]).join('');$('petalsF').innerHTML=PET.map((p,i)=>p.front?html[i]:'').join('')}
+const pts=PET.map((p,i)=>document.querySelector('#head .pt[data-i="'+i+'"]'));
+$('drops').innerHTML=dots(6,0,-40,170,130,['#e8402a','#f47a5e','#c4281c'],2.6);
+let st='';for(let i=0;i<70;i++){const a=i/70*6.283+rnd()*.1,r0=5+rnd()*3,r=14+rnd()*12,x=Math.cos(a)*r,y=-13+Math.sin(a)*r*.42-3-rnd()*4;st+='<path d="M'+f1(Math.cos(a)*r0)+','+f1(-13+Math.sin(a)*r0*.42)+'Q'+f1(Math.cos(a)*(r0+r)*.5+(rnd()-.5)*3)+','+f1(-15+Math.sin(a)*(r0+r)*.2)+' '+f1(x)+','+f1(y)+'" stroke="#140a08" stroke-width=".55" fill="none" opacity=".8"/><ellipse cx="'+f1(x)+'" cy="'+f1(y)+'" rx="1.9" ry="1.1" transform="rotate('+f1(a*57.3)+' '+f1(x)+' '+f1(y)+')" fill="#0e0606"/>';if(i%3===0)st+='<circle cx="'+f1(x+(rnd()-.5)*5)+'" cy="'+f1(y+(rnd()-.5)*3)+'" r=".55" fill="#2a1a14" opacity=".75"/>'}
+st='<ellipse cx="0" cy="-14" rx="21" ry="9" fill="#140808" opacity=".6"/>'+st;
+{let pr='';for(let i=0;i<150;i++){const a=rnd()*6.283,r=10+rnd()*14;pr+='<circle cx="'+f1(Math.cos(a)*r)+'" cy="'+f1(-14+Math.sin(a)*r*.42)+'" r="'+f1(.45+rnd()*.7)+'" fill="'+(rnd()<.6?'#efe0ae':'#c9a453')+'" opacity="'+f1(.65+rnd()*.3)+'"/>'}st=st+pr}
+$('stam').innerHTML=st;
+let ph='';for(let i=-4;i<=4;i++)ph+='<path d="M'+f1(i*5)+',-3Q'+f1(i*7.4)+',-28 '+f1(i*4.6)+',-53"/>';
+let rays='',rhi='';for(let i=0;i<10;i++){const a=i/10*Math.PI*2+.15,x=Math.cos(a)*19,y=-57+Math.sin(a)*4.6;rays+='<line x1="0" y1="-57" x2="'+f1(x)+'" y2="'+f1(y)+'"/>';rhi+='<line x1="'+f1(x*.2)+'" y1="'+f1(-57+(y+57)*.2-.6)+'" x2="'+f1(x*.85)+'" y2="'+f1(-57+(y+57)*.85-.6)+'"/>'}
+const podP=ell(0,-28,24,28,.05);
+$('pod').innerHTML='<path id="podw" d="'+cr(jit(podP.map(([x,y])=>[x*.92+2,y*.95]),2))+'" opacity=".85"/>'+wash(podP,'#56704a','.15',.6,4,-6)+'<ellipse cx="9" cy="-24" rx="9" ry="18" fill="#203d14" opacity=".18"/><ellipse cx="-8" cy="-35" rx="5" ry="13" fill="#fff" opacity=".3"/>'+'<g stroke="#56704a" fill="none" stroke-width=".55" opacity=".45">'+ph+'</g>'+wash(ell(0,-57,22,6,.08),'#2a2a1e','.7',.95)+'<g stroke="#140f0a" stroke-width="1.7" stroke-linecap="round" opacity=".8">'+rays+'</g><g stroke="#e8e0c8" stroke-width=".45" stroke-linecap="round" opacity=".55">'+rhi+'</g><circle cx="0" cy="-57.5" r="2.2" fill="#140f0a"/>';
+const hairs=s=>{let h='';for(let i=0;i<9;i++){const t=.1+i*.1,y=-50*t,x=s*Math.sin(Math.PI*t)*15;h+='<line x1="'+f1(x)+'" y1="'+f1(y)+'" x2="'+f1(x+s*4)+'" y2="'+f1(y-2)+'"/>'}return h};
+const BPTS=[];
+$('bud').innerHTML=[-1,1].map(s=>{const p=[[0,0],[12*s,-8],[15*s,-26],[9*s,-44],[0,-52],[3*s,-30]];BPTS.push(p);return '<g class="half"><g class="w">'+wash(p,s<0?'#7f9c6a':'#9db487','.85',.9)+wash(p,'#e0321f','.3',.68,0,6)+'</g><g stroke="#56704a" fill="none" stroke-linecap="round" stroke-width=".45" opacity=".6">'+hairs(s)+'</g></g>'}).join('');
+const leafPts=(L,W)=>{const up=[],lo=[];const n=9;for(let i=1;i<n;i++){const x=L*i/n,e=Math.sin(Math.PI*i/n)**.8*W;up.push([x,-e*(i%2?1:.55)]);lo.push([x+L*.03,e*(i%2?.6:1)])}return [[0,0],...up,[L,0],...lo.reverse()]};
+/* a poppy leaf: a midrib with deep, toothed lobes that alternate and taper, bending a little under its own weight */
+const featherLeaf=(L,W,bend)=>{const n=L>60?5:4,up=[[0,0],[L*.03,-W*.1]],lo=[],tips=[];const by=x=>bend*(x/L)**2*L*.16;
+  for(let i=0;i<n;i++){const f=(i+.55)/(n+.1),x=L*(.06+f*.86),tp=Math.sin(Math.PI*Math.min(.97,(i+.8)/(n+.6)))**.65,w=W*tp*(.75+rnd()*.5),gap=L*.035;
+    up.push([x-gap,-W*.2*tp],[x+L*.02,-w*.55],[x+L*.045,-w*.62],[x+L*.06,-w]);tips.push([x+L*.06,-w]);
+    const x2=x+L/(2*n)*.9,w2=W*tp*(.7+rnd()*.5);lo.push([x2-gap,W*.2*tp],[x2+L*.02,w2*.55],[x2+L*.04,w2*.6],[x2+L*.06,w2]);tips.push([x2+L*.06,w2])}
+  const p=[...up,[L,0],...lo.reverse(),[L*.02,W*.08]].map(([x,y])=>[x,y+by(x)]);return {p,tips:tips.map(([x,y])=>[x,y+by(x)]),mid:[[2,by(2)],[L*.5,by(L*.5)],[L-4,by(L-4)]]}};
+/* two at the base (one drooping), four alternating up the stem, smaller as they climb */
+const LV=[{ang:-150,L:96,W:20,bend:-1,a:.7,b:1.7},{t:.2,side:1,off:44,L:62,W:14,bend:1,a:1.3,b:2.2}];
+const LPTS=[];
+$('leaves').innerHTML=LV.map(l=>{const f=featherLeaf(l.L,l.W,l.bend);LPTS.push(f);return '<g class="lf"><g class="w">'+wash(f.p,'url(#lg)','.85',.95)+'</g></g>'}).join('');
+$('coty').innerHTML=[-1,1].map(s=>'<g transform="rotate('+(s*28)+')">'+wash([[0,0],[s*8,-3],[s*17,-7],[s*10,-11],[s*3,-7]],'#a7bd8d','.85',1)+wash([[0,0],[s*8,-3],[s*17,-7],[s*10,-11],[s*3,-7]],'#6a8758','.35',.6)+'</g>').join('');
+$('seedg').innerHTML=wc([[-7,-2],[-3,-7],[4,-7],[8,-2],[6,4],[0,6],[-3,3],[-6,3]],'#7a3f6e','.75',{cut:0});
+const SIDES=[{d:'M199 540C195 470 172 402 156 356C151 342 144 338 138 344',x:138,y:346,r:205,a:1.75,b:2.6}];
+$('sides').innerHTML=SIDES.map(s=>'<g class="side"><path d="'+s.d+'" pathLength="1" fill="none" stroke="#8aa877" stroke-width="3.3" opacity=".45" stroke-linecap="round"/><path d="'+s.d+'" pathLength="1" fill="none" stroke="#56704a" stroke-width=".7" opacity=".6"/><g class="sb">'+wash(ell(0,-14,9.5,14,.1),'#9db487','.85',1)+wash(ell(0,-14,9.5,14,.1),'#6a8758','.45',.75,1,2)+wash(ell(0,-14,9.5,14,.1),'#e0321f','.3',.5,0,4)+'</g></g>').join('');
+
+/* ---------- deep watercolour: each petal, leaf and bud half is painted once, off screen, then swapped in ---------- */
+const FX=(sd,g)=>'<filter id="wob" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency=".045" numOctaves="2" seed="'+sd+'"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter><filter id="wb" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency=".05" numOctaves="2" seed="'+(sd+3)+'"/><feDisplacementMap in="SourceGraphic" scale="7"/><feGaussianBlur stdDeviation="3.2"/></filter><filter id="sf" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1"/></filter><filter id="b2" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2.2"/></filter><filter id="b6" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="6"/></filter><filter id="gr" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="1.3" numOctaves="2" seed="'+sd+'"/><feColorMatrix values="0 0 0 0 '+g[0]+' 0 0 0 0 '+g[1]+' 0 0 0 0 '+g[2]+' 3 0 0 0 -1.75"/></filter>';
+const shape=pts=>(s,dx=0,dy=0,j=2)=>cr(jit(pts.map(([x,y])=>[x*s+dx,y*s+dy]),j));
+const petalArt=(pts,R,sd,o={})=>{const S=shape(pts),box=[-R*1.14,-R*1.14,R*2.28,R*1.32];
+  let h='<defs>'+FX(sd,[.55,.12,.08])+'<clipPath id="c"><path d="'+S(.985,0,0,.5)+'"/></clipPath><radialGradient id="bt"><stop offset="0" stop-color="#0e0505" stop-opacity=".9"/><stop offset=".5" stop-color="#3a0a06" stop-opacity=".5"/><stop offset="1" stop-color="#5a0c08" stop-opacity="0"/></radialGradient></defs>';
+  [[1,'#fcdcd0',.5,0,0,'wob'],[.95,'#f9ad95',.3,1,-1,'wb'],[.86,'#f5845f',.28,-1,0,'wb'],[.74,'#ef6040',.3,1,1,'wb'],[.58,'#e5432a',.36,0,2,'wb'],[.4,'#cc2c1b',.45,0,2,'wb'],[.22,'#2a0604',.6,0,1,'wb']].forEach(([k,c,op,dx,dy,fl])=>{h+='<path d="'+S(k,dx,dy,1.2)+'" fill="'+c+'" opacity="'+op+'" filter="url(#'+fl+')"/>'});
+  h+='<g clip-path="url(#c)">';
+  const side=rnd()<.5?-1:1;h+='<ellipse cx="'+f1(side*R*.28)+'" cy="'+f1(-R*.5)+'" rx="'+f1(R*.32)+'" ry="'+f1(R*.4)+'" fill="#e8402a" opacity=".26" filter="url(#b6)"/>';
+  const arc=(th,r0,r1,b)=>'M'+f1(Math.sin(th)*r0)+','+f1(-Math.cos(th)*r0)+'Q'+f1(Math.sin(th)*(r0+r1)/2+b)+','+f1(-Math.cos(th)*(r0+r1)/2)+' '+f1(Math.sin(th)*r1)+','+f1(-Math.cos(th)*r1);
+  const folds=[];for(let i=0;i<4;i++)folds.push((rnd()-.5)*1.6);
+  folds.forEach(th=>{const b=(rnd()-.5)*12;h+='<path d="'+arc(th,R*.14,R*(.78+rnd()*.15),b)+'" fill="none" stroke="#c22a16" stroke-width="'+f1(4+rnd()*4)+'" stroke-linecap="round" opacity=".14" filter="url(#b2)"/><path d="'+arc(th+.045,R*.2,R*(.74+rnd()*.15),b)+'" fill="none" stroke="#fff" stroke-width="'+f1(1.6+rnd()*1.4)+'" stroke-linecap="round" opacity=".28" filter="url(#sf)"/>'});
+  let hl='';for(let i=0;i<230;i++){const near=rnd()<.6,th=near?folds[i%4]+(rnd()+rnd()+rnd()-1.5)*.16:(rnd()-.5)*1.85,r0=R*(.06+rnd()*.1),r1=R*(.4+rnd()*.55);hl+='<path d="'+arc(th,r0,r1,(rnd()-.5)*7+Math.sin(th*3)*4)+'" stroke-width="'+f1(.18+rnd()*.22)+'" opacity="'+f1(.07+rnd()*.13)+'"/>'}
+  h+='<g fill="none" stroke="#b3200f" stroke-linecap="round">'+hl+'</g>';
+  let ck='';for(let i=0;i<34;i++){const th=(rnd()-.5)*1.8,r=R*(.5+rnd()*.42),x=Math.sin(th)*r,y=-Math.cos(th)*r,l=2+rnd()*5,tx=Math.cos(th),ty=Math.sin(th);ck+='M'+f1(x-tx*l/2)+','+f1(y-ty*l/2)+'q'+f1(tx*l/2+(rnd()-.5)*1.5)+','+f1(ty*l/2+(rnd()-.5)*1.5)+' '+f1(tx*l)+','+f1(ty*l)}h+='<path d="'+ck+'" fill="none" stroke="#c22a16" stroke-width=".35" opacity=".16" stroke-linecap="round"/>';
+  for(let i=0;i<2;i++){const a=(rnd()-.5)*1.3,r=R*(.74+rnd()*.18),bl=ell(Math.sin(a)*r,-Math.cos(a)*r,R*(.1+rnd()*.08),R*(.05+rnd()*.05),.6);h+='<path d="'+cr(bl)+'" fill="#fff" opacity=".22" filter="url(#wob)"/><path d="'+cr(bl)+'" fill="none" stroke="#e8553c" stroke-width=".7" opacity=".35" filter="url(#wob)"/>'}
+  if(o.curl){const outer=pts.slice(2,pts.length-2),inner=outer.map(([x,y])=>[x*.87,y*.87]).reverse();h+='<path d="'+cr(jit([...outer,...inner],1),false)+'" fill="#fde3d8" opacity=".32" filter="url(#wob)"/><path d="'+cr(jit(inner.slice().reverse().map(([x,y])=>[x*1.01,y*1.01]),.8),true)+'" fill="none" stroke="#c8301c" stroke-width=".9" opacity=".45"/>'}
+  {const bp=ell(0,-R*.15,R*.085,R*.12,.35);h+='<path d="'+cr(bp)+'" fill="#2a0b38" opacity="'+(o.curl?.35:.55)+'" filter="url(#wob)"/><path d="'+cr(ell(0,-R*.17,R*.05,R*.07,.3))+'" fill="#6b3a90" opacity="'+(o.curl?.25:.4)+'" filter="url(#wob)"/><path d="'+cr(bp)+'" fill="none" stroke="#7a3f9a" stroke-width=".7" opacity=".45" filter="url(#wob)"/>';
+   let dl='',dd='';for(let i=0;i<7;i++){const th=-.75+i*.25+(rnd()-.5)*.08,r0=R*.3,r1=R*(.5+rnd()*.25),b=(rnd()-.5)*8;dl+=arc(th,r0,r1,b);for(let j=0;j<3;j++){const t=.35+j*.25+rnd()*.08,rr=r0+(r1-r0)*t;dd+='<circle cx="'+f1(Math.sin(th)*rr+b*t*(1-t)*2)+'" cy="'+f1(-Math.cos(th)*rr)+'" r="'+f1(.7+rnd()*.6)+'"/>'}}
+   h+='<path d="'+dl+'" fill="none" stroke="#2a0e0a" stroke-width=".35" opacity=".35"/><g fill="#2a0e0a" opacity=".55">'+dd+'</g>'}
+  h+='<rect x="'+f1(box[0])+'" y="'+f1(box[1])+'" width="'+f1(box[2])+'" height="'+f1(box[3])+'" filter="url(#gr)" opacity=".35"/></g>';
+  h+='<path d="'+cr(jit(pts,.6))+'" fill="none" stroke="#c8301c" stroke-width=".8" opacity=".55" filter="url(#wob)"/>';
+  return [h,box]};
+const leafArt=(f,L,W,sd)=>{const p=f.p,S=shape(p),xs=p.map(q=>q[0]),ys=p.map(q=>q[1]),box=[Math.min(...xs)-6,Math.min(...ys)-6,Math.max(...xs)-Math.min(...xs)+12,Math.max(...ys)-Math.min(...ys)+12];
+  let h='<defs>'+FX(sd,[.16,.22,.12])+'<clipPath id="c"><path d="'+S(.97,0,0,.6)+'"/></clipPath></defs>';
+  [[1,'#cbd8b0',.6,0,0],[.96,'#a7bd8d',.52,1,-1],[.88,'#88a473',.46,-1,1],[.74,'#6a8758',.38,0,0]].forEach(([k,c,o,dx,dy])=>{h+='<path d="'+S(k,dx,dy,1.2)+'" fill="'+c+'" opacity="'+o+'" filter="url(#'+(k>.8?'wob':'wb')+')"/>'});
+  h+='<path d="'+S(.99,0,0,1)+'" fill="none" stroke="#5f7a4e" stroke-width=".9" opacity=".4" filter="url(#sf)"/><g clip-path="url(#c)">';
+  const m=f.mid;h+='<path d="M'+f1(m[0][0])+','+f1(m[0][1])+'Q'+f1(m[1][0])+','+f1(m[1][1])+' '+f1(m[2][0])+','+f1(m[2][1])+'" stroke="#4e6842" stroke-width="'+f1(W*.22)+'" opacity=".25" fill="none" filter="url(#b2)"/>';
+  let v='';f.tips.forEach(([tx,ty])=>{const bx=tx-L*.08,byy=ty*.05+(f.mid[1][1])*(bx/L);v+='<path d="M'+f1(bx)+','+f1(byy)+'Q'+f1(tx-L*.03)+','+f1(ty*.5)+' '+f1(tx-1)+','+f1(ty*.92)+'"/>'});
+  h+='<g fill="none" stroke="#4a6340" stroke-width=".45" opacity=".5" stroke-linecap="round">'+v+'</g><path d="M'+f1(m[0][0])+','+f1(m[0][1])+'Q'+f1(m[1][0])+','+f1(m[1][1])+' '+f1(m[2][0])+','+f1(m[2][1])+'" stroke="#e4ecd2" stroke-width=".8" fill="none" opacity=".7"/>';
+  h+='<rect x="'+f1(box[0])+'" y="'+f1(box[1])+'" width="'+f1(box[2])+'" height="'+f1(box[3])+'" filter="url(#gr)" opacity=".45"/></g>';return [h,box]};
+const budArt=(p,sg,sd)=>{const S=shape(p),xs=p.map(q=>q[0]),box=[Math.min(...xs)-10,-62,Math.max(...xs)-Math.min(...xs)+20,72];
+  let h='<defs>'+FX(sd,[.08,.2,.06])+'<clipPath id="c"><path d="'+S(.97,0,0,1)+'"/></clipPath></defs>';
+  [[1,'#c3d1a6',.6],[.92,'#9db487',.52],[.8,'#7f9c6a',.46],[.55,'#5f7d4e',.36]].forEach(([k,c,o])=>{h+='<path d="'+S(k)+'" fill="'+c+'" opacity="'+o+'" filter="url(#wob)"/>'});
+  h+='<g clip-path="url(#c)"><ellipse cx="'+(sg*3)+'" cy="-8" rx="8" ry="13" fill="#e0321f" opacity=".32" filter="url(#b2)"/><ellipse cx="'+(sg*6)+'" cy="-34" rx="3" ry="10" fill="#fff" opacity=".3" filter="url(#sf)"/><rect x="'+box[0]+'" y="-62" width="'+box[2]+'" height="72" filter="url(#gr)" opacity=".5"/></g>';
+  let hd='',hl='';for(let i=0;i<p.length-1;i++){const [ax,ay]=p[i],[bx,by]=p[i+1];for(let j=0;j<6;j++){const t=j/6,x=ax+(bx-ax)*t,y=ay+(by-ay)*t,nx=x-sg*1,ny=y+26,L=Math.hypot(x-sg,y+26)||1,ux=(x-sg*1)/L,uy=(y+26)/L,l=2.5+rnd()*3;const seg='M'+f1(x)+','+f1(y)+'l'+f1(ux*l+(rnd()-.5))+','+f1(uy*l-1);(j%2?hl+=seg:hd+=seg)}}
+  h+='<path d="'+hd+'" stroke="#4e6842" stroke-width=".4" opacity=".6" fill="none" stroke-linecap="round"/><path d="'+hl+'" stroke="#eef8dc" stroke-width=".35" opacity=".75" fill="none" stroke-linecap="round"/>';return [h,box]};
+const SVGNS='http://www.w3.org/2000/svg';
+const raster=(inner,[bx,by,bw,bh],sc=3)=>new Promise(res=>{const w=Math.round(bw*sc),hh=Math.round(bh*sc),src='<svg xmlns="'+SVGNS+'" width="'+w+'" height="'+hh+'" viewBox="'+f1(bx)+' '+f1(by)+' '+f1(bw)+' '+f1(bh)+'">'+inner+'</svg>';const url=URL.createObjectURL(new Blob([src],{type:'image/svg+xml'})),im=new Image();
+  im.onload=()=>{let out=null;try{const c=document.createElement('canvas');c.width=w;c.height=hh;c.getContext('2d').drawImage(im,0,0);out=c.toDataURL('image/png')}catch(e){}URL.revokeObjectURL(url);res(out)};im.onerror=()=>{URL.revokeObjectURL(url);res(null)};im.src=url});
+const place=(g,href,[bx,by,bw,bh])=>{if(!href||!g)return;const w=g.querySelector('.w');if(!w)return;const im=document.createElementNS(SVGNS,'image');im.setAttribute('href',href);im.setAttribute('x',f1(bx));im.setAttribute('y',f1(by));im.setAttribute('width',f1(bw));im.setAttribute('height',f1(bh));im.setAttribute('preserveAspectRatio','none');g.insertBefore(im,w);w.remove()};
+(async()=>{try{
+  const pg=pts,lg=[...$('leaves').querySelectorAll('.lf')],bg=[...$('bud').querySelectorAll('.half')];
+  for(let i=0;i<PET.length;i++){const [h,b]=petalArt(PPTS[i],PET[i].R,11+i,{curl:PET[i].front});place(pg[i],await raster(h,b,3.2),b)}
+  for(let i=0;i<LV.length;i++){const [h,b]=leafArt(LPTS[i],LV[i].L,LV[i].W,31+i);place(lg[i],await raster(h,b,3.4),b)}
+  for(let i=0;i<2;i++){const [h,b]=budArt(BPTS[i],i?1:-1,51+i);place(bg[i],await raster(h,b,4),b)}
+}catch(e){}})();
+
+const FL=[];let fl='';for(let i=0;i<36;i++){FL.push({dx:(rnd()-.5)*320,ye:543+rnd()*10,h:30+rnd()*90,dl:rnd()*.3});fl+='<circle r="'+f1(1.1+rnd()*.9)+'"/>'}
+$('fly').innerHTML=fl;
+
+/* ---------- hero: a scarlet sprig in the corner ---------- */
+{let h='<defs><linearGradient id="lg2" x1="0" x2="1"><stop offset="0" stop-color="#5f7d4e"/><stop offset="1" stop-color="#c3d1a6"/></linearGradient><linearGradient id="sg" x1="0" x2="1"><stop offset="0" stop-color="#b80d05"/><stop offset=".6" stop-color="#f2210f"/><stop offset="1" stop-color="#ff6a45"/></linearGradient></defs><g '+INK+' stroke="#5b3a2a" stroke-width="1.3">';
+['M150 -4C148 40 140 70 128 96C110 130 96 170 92 214','M134 84C160 96 190 104 222 110','M112 140C90 150 62 158 36 160','M100 186C118 210 132 236 140 268'].forEach(d=>h+='<path d="'+d+'"/>');h+='</g>';
+const leaf=(x,y,r,L,W)=>wc(mv(rot([[0,0],[L*.3,-W],[L*.72,-W*.75],[L,0],[L*.7,W*.7],[L*.28,W*.85]],r),x,y),'url(#lg2)','.9',{cut:1})+'<path d="'+cr(mv(rot([[2,0],[L*.5,-1],[L-3,0]],r),x,y),true)+'" '+INK+' stroke-width=".5" opacity=".6"/>';
+h+=leaf(128,96,200,58,17)+leaf(118,120,150,46,14)+leaf(150,40,-30,40,12);
+const bract=(x,y,r,L,W)=>{const p=mv(rot([[0,0],[L*.25,-W*.9],[L*.65,-W],[L,-W*.2],[L*.8,W*.6],[L*.35,W*.8]],r),x,y);const v=mv(rot([[1,0],[L*.5,-W*.15],[L*.9,-W*.1]],r),x,y);return wc(p,'url(#sg)','.92',{second:'#ff7a5c',sop:.35,cut:2})+'<path d="'+cr(v,true)+'" '+INK+' stroke-width=".45" opacity=".6"/>'};
+const cluster=(x,y,a)=>bract(x,y,a-40,40,20)+bract(x,y,a+10,44,22)+bract(x,y,a+60,36,18);
+h+=cluster(222,110,0)+cluster(36,160,175)+cluster(140,268,80)+cluster(92,214,120);
+h+=dots(10,150,180,110,120,['#f2210f','#ff4a2a','#c40f06'],2);
+$('sprig').innerHTML=h;}
+
+/* ---------- hero meadow: grass in the wind ---------- */
+const HP=[[230,.8],[420,1],[455,.7],[760,1.1],[800,.75],[1010,.9]];
+{let h='<path d="M0 178C200 172 380 182 600 176S1000 171 1200 178" '+INK+' stroke-width=".9" opacity=".45"/>';
+for(let x=0;x<1200;x+=10+rnd()*12){let b='';const n=3+Math.floor(rnd()*4);for(let i=0;i<n;i++){const xx=x+(rnd()-.5)*8;b+='<path d="'+blade(xx,178,8+rnd()*24,(rnd()-.3)*12)+'"/>'}
+  h+='<g class="sw" style="animation-delay:'+f1(-x/1200*6)+'s;animation-duration:'+f1(5.5+rnd()*1.5)+'s" stroke="#8aa877" fill="none" stroke-width=".9" opacity=".65" stroke-linecap="round">'+b+'</g>'}
+const C=[['#f2210f','#ff6a45'],['#ef2f55','#ff4f9a'],['#d61f7a','#8b45c9']];
+HP.forEach(([x,s],i)=>{const y=177,top=y-46*s,c=C[i%3];h+='<g class="sw" style="animation-delay:'+f1(-x/1200*6)+'s;animation-duration:7s"><path d="M'+x+','+y+'q-2,'+f1(-23*s)+' 1,'+f1(-46*s)+'" stroke="#8aa877" stroke-width="1.6" opacity=".55" fill="none"/><path d="M'+x+','+y+'q-2,'+f1(-23*s)+' 1,'+f1(-46*s)+'" '+INK+' stroke-width=".6" opacity=".6"/>'+wash(ell(x+2,top-5*s,10*s,7.5*s,.3),c[0],'.88',1)+wash(ell(x+4,top-7*s,6*s,4.5*s,.3),c[1],'.45',1)+line(ell(x+1,top-5*s,9.5*s,7*s,.3),.6,.7,3)+'<circle cx="'+(x+1)+'" cy="'+f1(top-3*s)+'" r="'+f1(1.8*s)+'" fill="#2a0a1f"/></g>'});
+$('horizon').innerHTML=h}
+
+/* seeds and petal flecks riding the wind across the hero meadow */
+{const cv=$('wind'),cx=cv.getContext('2d'),box=cv.parentElement;let W=0,H=0,dpr=1,P=[],run=false,raf=0;
+ const size=()=>{dpr=Math.min(2,devicePixelRatio||1);W=box.clientWidth;H=box.clientHeight;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0)};
+ const src=()=>{const sc=Math.max(W/1200,200/200),[x,s]=HP[Math.floor(Math.random()*HP.length)];return [W/2+(x-600)*sc,H-(200-(177-46*s))*sc]};
+ const spawn=(p,init)=>{const [x,y]=src();const seed=Math.random()<.72;Object.assign(p,{x:init?Math.random()*W:x,y:init?H-40-Math.random()*(H-60):y,vx:.25+Math.random()*.6,vy:-.15-Math.random()*.3,ph:Math.random()*6.3,seed,r:seed?.9+Math.random()*.9:2+Math.random()*1.6,c:seed?'#2a1d1f':['#f2210f','#ff4f9a','#ef2f55'][Math.floor(Math.random()*3)],rot:Math.random()*6.3,life:0,max:500+Math.random()*600})};
+ const tick=()=>{cx.clearRect(0,0,W,H);for(const p of P){p.life++;p.ph+=.02;p.x+=p.vx+Math.sin(p.ph)*.25;p.vy+=.0012;p.y+=p.vy+Math.cos(p.ph*1.3)*.12;p.rot+=.02;const a=Math.min(1,p.life/60,(p.max-p.life)/80);if(p.life>p.max||p.x>W+10||p.y>H+10){spawn(p);continue}cx.globalAlpha=Math.max(0,a)*(p.seed?.8:.75);cx.fillStyle=p.c;cx.beginPath();if(p.seed)cx.arc(p.x,p.y,p.r,0,6.283);else cx.ellipse(p.x,p.y,p.r,p.r*.55,p.rot,0,6.283);cx.fill()}raf=run?requestAnimationFrame(tick):0};
+ size();for(let i=0;i<34;i++){const p={};spawn(p,true);P.push(p)}
+ const ro=new ResizeObserver(size);ro.observe(box);
+ const io=new IntersectionObserver(e=>{run=e[0].isIntersecting&&!calm.matches;if(run&&!raf)raf=requestAnimationFrame(tick)});io.observe(box);
+ if(calm.matches)tick();}
+
+/* ---------- the meadow around the poppy, drawn at real pixel size ---------- */
+const front=document.querySelector('.front'),art=$('art'),ground=$('ground'),far=$('far'),near=$('near');
+let wide=false;
+const layout=()=>{
+  wide=innerWidth>=700;
+  const W=front.clientWidth,H=front.clientHeight;if(!W||!H)return;
+  const aw=art.clientWidth,ah=art.clientHeight,ax=art.getBoundingClientRect().left-front.getBoundingClientRect().left,s=Math.min(aw/400,ah/600);
+  const x0=ax+(aw-400*s)/2,y0=ah-600*s,bx=x0+200*s,gy=y0+540*s;
+  sv=97;
+  let g='';const pts=[];for(let x=-20;x<=W+40;x+=70)pts.push([x,gy+(Math.abs(x-bx)<40?0:(rnd()-.5)*4)]);
+  g+='<path d="'+cr(pts,true)+'" '+INK+' stroke-width=".9" opacity=".55"/>';
+  for(let x=6;x<W;x+=16+rnd()*16){if(Math.abs(x-bx)<14*s)continue;if(Math.abs(x-bx)>W*.22&&rnd()>.25)continue;let b='';const n=2+Math.floor(rnd()*4),k=Math.sqrt(s);for(let i=0;i<n;i++)b+='<path d="'+blade(x+(rnd()-.5)*8,gy+1,(6+rnd()*16)*k,(rnd()-.3)*10*k)+'"/>';
+    g+='<g class="sw" style="animation-delay:'+f1(-x/W*6)+'s;animation-duration:'+f1(5.5+rnd()*1.5)+'s" stroke="#8aa877" fill="none" stroke-width=".9" opacity=".65" stroke-linecap="round">'+b+'</g>'}
+  for(let i=0;i<10;i++)g+=line(ell(bx+(rnd()-.5)*160*s,gy+8+rnd()*30*s,1+rnd()*2,.8+rnd()*1.2,.2),.5,.4,0);
+  ground.setAttribute('viewBox','0 0 '+W+' '+H);ground.innerHTML=g;
+  if(!wide){far.innerHTML=near.innerHTML='';return}
+  /* far layer: a paler band of meadow and two distant poppies echoing the near one */
+  let f='<defs><linearGradient id="band" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7e8dd" stop-opacity=".7"/><stop offset="1" stop-color="#f7e8dd" stop-opacity="0"/></linearGradient></defs><rect x="0" y="'+f1(gy+2)+'" width="'+W+'" height="'+f1(H-gy)+'" fill="url(#band)"/>';
+  f+='<use href="#plant" opacity=".2" transform="translate('+f1(W*.6)+' '+f1(gy-3)+') scale('+f1(s*.3*1000)/1000+') translate(-200 -540)"/>';
+  far.setAttribute('viewBox','0 0 '+W+' '+H);far.innerHTML=f;
+  /* near layer: tall grass close to the eye in both corners */
+  let n='';const tuft=(x0,x1)=>{for(let x=x0;x<x1;x+=14+rnd()*14){const h=30+rnd()*(H*.11),l=(rnd()-.35)*50;n+='<g class="sw" style="animation-delay:'+f1(-x/W*6)+'s;animation-duration:'+f1(6+rnd()*2)+'s"><path d="'+blade(x,H+6,h,l)+'" stroke="#8aa877" stroke-width="3.2" opacity=".42" fill="none" stroke-linecap="round"/><path d="'+blade(x+1,H+6,h,l)+'" '+INK+' stroke-width=".7" opacity=".55"/></g>'}};
+  tuft(W*.93,W+10);
+  near.setAttribute('viewBox','0 0 '+W+' '+H);near.innerHTML=n;
+};
+const fro=new ResizeObserver(layout);fro.observe(front);
+
+/* ---------- scroll drives the poppy's life ---------- */
+const stemhair=$('stemhair'),stem1=$('stem1'),stem2=$('stem2'),stemw=$('stemw'),head=$('head'),coty=$('coty'),seed=$('seedg'),pod=$('pod'),stam=$('stam'),bud=$('bud'),cap=$('cap'),drops=$('drops'),podw=$('podw');
+const petals=pts,halves=[...document.querySelectorAll('.half')],lfs=[...document.querySelectorAll('.lf')],sides=[...document.querySelectorAll('.side')],flys=[...$('fly').children],roots=[...$('roots').children];
+roots.forEach(p=>p.style.strokeDasharray=1);
+sides.forEach(s=>s.querySelectorAll('path[pathLength]').forEach(p=>p.style.strokeDasharray=1));
+const CAP=['seed','first leaves','in bud','in bloom','petals falling','seed pod'];
+const idx=[...document.querySelectorAll('#index a')];
+const draw=(u,i)=>{
+  const sh=kf(u,[0,62,292,342,342,336]),n=kf(u,[0,0,1,0,0,0]);
+  const Ty=540-sh,Hx=200+32*n,Hy=Ty+22*n;
+  const d='M200 541C197 '+f1(540-sh*.5)+' '+f1(200+10*n)+' '+f1(Ty-26*n)+' '+f1(Hx)+' '+f1(Hy);
+  const dry=ramp(u,4.1,5);
+  [stemw,stem1,stem2].forEach(e=>{e.setAttribute('d',d);e.style.opacity=sh>1?'':0});
+  stem1.setAttribute('transform','translate(-1.3 0)');stem2.setAttribute('transform','translate(1.3 0)');
+  stemw.setAttribute('stroke',mix('#8aa877','#c2ad6a',dry));
+  if(sh>25){let hd='';const P0=[200,541],P1=[197,540-sh*.5],P2=[200+10*n,Ty-26*n],P3=[Hx,Hy];for(let i=1;i<36;i++){const t=i/36,m=1-t,b0=m*m*m,b1=3*m*m*t,b2=3*m*t*t,b3=t*t*t,x=b0*P0[0]+b1*P1[0]+b2*P2[0]+b3*P3[0],y=b0*P0[1]+b1*P1[1]+b2*P2[1]+b3*P3[1],dx=3*m*m*(P1[0]-P0[0])+6*m*t*(P2[0]-P1[0])+3*t*t*(P3[0]-P2[0]),dy=3*m*m*(P1[1]-P0[1])+6*m*t*(P2[1]-P1[1])+3*t*t*(P3[1]-P2[1]),L=Math.hypot(dx,dy)||1,tx=dx/L,ty=dy/L,sg=i%2?1:-1,nx=-ty*sg,ny=tx*sg,hl=2.2+(i*7%5)*.5;hd+='M'+f1(x+nx*1.6)+','+f1(y+ny*1.6)+'l'+f1((nx*.8+tx*.6)*hl)+','+f1((ny*.8+ty*.6)*hl)}stemhair.setAttribute('d',hd);stemhair.style.opacity=''}else stemhair.style.opacity=0;
+  roots.forEach((p,k)=>p.style.strokeDashoffset=1-ramp(u,.08+k*.1,.8+k*.1));
+  seed.style.opacity=1-ramp(u,.95,1.5);
+  const c=ramp(u,.25,.95)*(1-ramp(u,1.3,1.9));
+  coty.setAttribute('transform','translate('+f1(Hx)+' '+f1(Hy)+') scale('+f1(c*100)/100+')');coty.style.opacity=c>0?1:0;
+  const l=ramp(u,.7,1.75);
+  const Q0=[200,541],Q1=[197,540-sh*.5],Q2=[200+10*n,Ty-26*n],Q3=[Hx,Hy];
+  const bez=t=>{const m=1-t,b0=m*m*m,b1=3*m*m*t,b2=3*m*t*t,b3=t*t*t,dx=3*m*m*(Q1[0]-Q0[0])+6*m*t*(Q2[0]-Q1[0])+3*t*t*(Q3[0]-Q2[0]),dy=3*m*m*(Q1[1]-Q0[1])+6*m*t*(Q2[1]-Q1[1])+3*t*t*(Q3[1]-Q2[1]);return [b0*Q0[0]+b1*Q1[0]+b2*Q2[0]+b3*Q3[0],b0*Q0[1]+b1*Q1[1]+b2*Q2[1]+b3*Q3[1],Math.atan2(dy,dx)*57.2958]};
+  lfs.forEach((g,k)=>{const L=LV[k],s=ramp(u,L.a,L.b);let x=200,y=541,ang=L.ang;if(L.t){const q=bez(L.t);x=q[0];y=q[1];ang=q[2]+L.side*L.off}g.setAttribute('transform','translate('+f1(x)+' '+f1(y)+') rotate('+f1(ang)+') scale('+f1(s*100)/100+')');g.style.opacity=s>0?1:0});
+  SIDES.forEach((s,k)=>{const g=ramp(u,s.a,s.b),el=sides[k];el.querySelectorAll('path[pathLength]').forEach(p=>p.style.strokeDashoffset=1-g);const bs=ramp(u,s.b-.3,s.b+.2);el.querySelector('.sb').setAttribute('transform','translate('+s.x+' '+s.y+') rotate('+s.r+') scale('+f1(bs*100)/100+')');el.style.opacity=g>0?1:0});
+  head.setAttribute('transform','translate('+f1(Hx)+' '+f1(Hy)+') rotate('+f1(150*n)+')');
+  const b=ramp(u,1.25,1.9),o=ramp(u,2.15,2.7);
+  bud.setAttribute('transform','scale('+f1(b*100)/100+')');bud.style.opacity=b>0&&o<1?1:0;
+  halves.forEach((h,k)=>{h.setAttribute('transform','rotate('+f1((k?1:-1)*o*48)+')');h.style.opacity=1-o});
+  const ps=ramp(u,2.35,3);
+  PET.forEach((p,k)=>{const f=ramp(u,3.15+p.dl*.16,3.8+p.dl*.16),r=lerp(p.rot,p.fr,f),w=.5+.5*ps,s=ps*(1-.25*f),sy=lerp(p.sy,.75,f);
+    petals[k].setAttribute('transform','translate('+f1(p.bx+p.dx*f)+' '+f1(p.by+(537-Hy)*f*f)+') rotate('+f1(r)+') scale('+f1(p.sx*w*s*100)/100+' '+f1(sy*s*100)/100+')');petals[k].style.opacity=ps>0?1-.3*f:0});
+  drops.style.opacity=ramp(u,2.7,3.1)*(1-ramp(u,3.4,3.9));
+  stam.setAttribute('transform','scale('+f1(ps*100)/100+')');stam.style.opacity=ps*(1-ramp(u,3.5,4.1));
+  const k=ps*lerp(10,30,ramp(u,3.6,4.6))/30;
+  pod.setAttribute('transform','scale('+f1(k*1000)/1000+')');pod.style.opacity=ps>0?1:0;
+  podw.setAttribute('fill',mix('#9db487','#cfae64',dry));
+  const x0=Hx,y0=Hy-57*k;
+  flys.forEach((e,j)=>{const p=FL[j],s=ramp(u,4.35+p.dl,4.95+p.dl*.15);e.setAttribute('cx',f1(x0+p.dx*s));e.setAttribute('cy',f1(lerp(y0,p.ye,s*s)-p.h*4*s*(1-s)));e.style.opacity=s>0?.85:0});
+  {const c=CAP[Math.min(5,Math.round(u))];if(cap.dataset.s!==c){cap.dataset.s=c;cap.innerHTML='<i>Papaver rhoeas</i> · '+c}}
+  idx.forEach((a,j)=>a.classList.toggle('on',j===i));
+};
+const chs=[...document.querySelectorAll('.ch')];
+let ticking=false;
+const update=()=>{ticking=false;const vh=innerHeight,ln=innerWidth<700?vh*.68:vh*.5;let t=0,ci=0;
+  for(let j=0;j<chs.length;j++){const r=chs[j].getBoundingClientRect();if(r.top<=ln){t=j+Math.min(1,(ln-r.top)/r.height);ci=j}}
+  let u=Math.max(0,Math.min(5,t+.5));if(calm.matches)u=Math.round(u);draw(u,ci)};
+const ask=()=>{if(!ticking){ticking=true;requestAnimationFrame(update)}};
+addEventListener('scroll',ask,{passive:true});addEventListener('resize',ask);
+update();
+
+/* ---------- depth: layers drift at different rates with the cursor ---------- */
+{const mid=$('mid');let tx=0,ty=0,cx=0,cy=0,moving=0;
+ const step=()=>{cx+=(tx-cx)*.06;cy+=(ty-cy)*.06;far.style.transform='translate('+f1(-cx*8)+'px,'+f1(-cy*4)+'px)';mid.style.transform='translate('+f1(-cx*16)+'px,'+f1(-cy*7)+'px)';near.style.transform='translate('+f1(-cx*34)+'px,'+f1(-cy*12)+'px)';moving=Math.abs(tx-cx)+Math.abs(ty-cy)>.002?requestAnimationFrame(step):0};
+ addEventListener('pointermove',e=>{if(!wide||calm.matches||e.pointerType!=='mouse')return;tx=e.clientX/innerWidth*2-1;ty=e.clientY/innerHeight*2-1;if(!moving)moving=requestAnimationFrame(step)},{passive:true});}
+}
+</script>
+</body>
+</html>

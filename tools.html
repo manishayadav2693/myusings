@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tools · MYusings</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cellipse cx='86' cy='33' rx='18' ry='13' fill='%23f2210f'/%3E%3Cpath d='M16 96C17 76 19 52 22 32C28 46 34 60 41 74C47 60 53 46 59 31C60 52 61 74 62 96M66 40L85 64M106 38L85 64M85 64C85 76 84 88 86 104' fill='none' stroke='%231f1b1d' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="fonts.css">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+/* VOICE a small shelf of handmade tools, shown as they really look
+   LAYOUT intro, then rounded tiles: a tinted window holding a real screenshot, name, one line, open
+   TYPE 'Cormorant Garamond' titles, Geist text */
+.wrap{max-width:1180px;margin:0 auto;padding:0 max(5vw,16px)}
+.kick{margin:0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+.intro{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0 40px;align-items:end;padding:clamp(48px,9vh,110px) 0 clamp(40px,6vh,64px)}
+.intro h1{margin-top:20px;font-size:clamp(46px,6.4vw,92px);font-weight:300;letter-spacing:-.035em;line-height:1}
+.intro p.lede{margin:22px 0 0;max-width:34em;font-size:clamp(18px,1.5vw,20px);color:var(--soft)}
+.stage{height:clamp(110px,13vw,160px);width:auto}
+.grid{list-style:none;margin:0;padding:clamp(40px,7vh,72px) 0 clamp(40px,6vh,64px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,2vw,28px)}
+.tile{position:relative;border-radius:24px;background:#fff;border:1px solid var(--hair);overflow:hidden;transition:transform .35s ease,box-shadow .35s ease}
+.tile:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(31,27,29,.28)}
+.win{position:relative;aspect-ratio:5/4;background:var(--bg);overflow:hidden;border-bottom:1px solid var(--hair)}
+.win img{position:absolute;display:block;box-shadow:0 10px 30px -8px rgba(31,27,29,.25),0 0 0 1px rgba(31,27,29,.06);transition:transform .5s ease}
+.win img.phone{width:54%;left:23%;top:12%;border-radius:22px}
+.win img.wide{width:128%;left:12%;top:14%;border-radius:12px}
+.tile:hover .win img{transform:translateY(-6px)}
+.meta{padding:22px 24px 24px}
+.meta h2{font-size:33px;font-weight:500}
+.meta p{margin:8px 0 18px;color:var(--soft);font-size:16px;line-height:1.5}
+.meta a{display:inline-flex;align-items:center;gap:8px;font-weight:500;font-size:15px;text-decoration:none}
+.meta a::after{content:"";position:absolute;inset:0;border-radius:24px}
+.meta a svg{width:16px;height:16px;transition:transform .3s ease}
+.tile:hover .meta a svg{transform:translateX(4px)}
+.note{display:grid;grid-template-columns:200px minmax(0,1fr);gap:20px 56px;border-top:1px solid var(--hair);padding:clamp(36px,6vh,64px) 0 clamp(56px,9vh,104px)}
+.note p{margin:0;max-width:36em;color:var(--soft)}
+@media(max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.grid{grid-template-columns:minmax(0,1fr)}.intro{grid-template-columns:minmax(0,1fr) auto}.stage{height:84px}.note{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){.tile,.win img,.meta a svg{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sc" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#b80d05"/><stop offset=".55" stop-color="#f2210f"/><stop offset="1" stop-color="#ff6a45"/></linearGradient>
+    <symbol id="logo" viewBox="0 0 120 120">
+      <ellipse cx="86" cy="33" rx="17" ry="12.5" fill="url(#sc)" opacity=".92" transform="rotate(-8 86 33)"/>
+      <ellipse cx="92" cy="28" rx="9" ry="6.5" fill="#ff7a5c" opacity=".55"/>
+      <path d="M71 37C68 23 82 17 87 24C93 15 106 21 103 34M75 41C82 47 95 46 101 38" fill="none" stroke="#1f1b1d" stroke-width="1.2" stroke-linecap="round"/>
+      <circle cx="86" cy="39" r="3.3" fill="#2a0a1f"/>
+      <path d="M16 96C17 76 19 52 22 32C28 46 34 60 41 74C47 60 53 46 59 31C60 52 61 74 62 96" fill="none" stroke="#1f1b1d" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M17.5 93C18.5 74 20.5 54 23.5 36M40 70C46 58 52 46 57.5 35" fill="none" stroke="#1f1b1d" stroke-width=".9" opacity=".45" stroke-linecap="round"/>
+      <path d="M66 41C72 49 78 56 85 64M106 39C99 47 92 56 85 64M85 64C85 76 84 88 86 104" fill="none" stroke="#1f1b1d" stroke-width="2.8" stroke-linecap="round"/>
+      <path d="M86 84C92 76 102 76 106 80C100 86 92 88 86 84Z" fill="#3faa4a" opacity=".75"/>
+      <path d="M86 84C93 77 101 77 105 80" fill="none" stroke="#1f1b1d" stroke-width=".8"/>
+      <circle cx="108" cy="16" r="1.7" fill="#f2210f"/><circle cx="113" cy="22" r="1" fill="#f2210f"/><circle cx="64" cy="22" r="1.3" fill="#f2210f" opacity=".7"/>
+    </symbol>
+  </defs>
+</svg>
+<header class="top">
+  <a class="mark" href="index.html" aria-label="MYusings home"><svg aria-hidden="true"><use href="#logo"/></svg><span class="wm"><b>MY</b>usings</span></a>
+  <nav aria-label="Sections"><a href="about.html">About</a><a href="musings.html">Musings</a><a href="tools.html" aria-current="page">Tools</a><a href="inseason.html">In season</a><a href="hello.html">Say hello</a></nav>
+</header>
+
+<section class="banner"><div class="txt"><p class="label"><i>Papaver rhoeas</i> · in bloom</p><h1>Tools</h1><p class="lede">Small apps I built for my own days. Open one and it’s yours to use.</p></div><img class="plant" src="img/stage-bloom.webp" alt="A watercolour poppy, in bloom"></section>
+
+<main class="wrap">
+  <ul class="grid"><li class="tile"><div class="win" style="--bg:#eee7dc"><img class="phone" src="img/tools/ll.webp" alt="" loading="lazy"></div><div class="meta"><h2>LatLong</h2><p>A travel journal for every country, city, trip and place.</p><a href="tools/latlong.html">Open LatLong <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></li><li class="tile"><div class="win" style="--bg:#ebe6da"><img class="phone" src="img/tools/qr.webp" alt="" loading="lazy"></div><div class="meta"><h2>Quiet Routine</h2><p>Fitness and habits, tracked quietly, one week at a time.</p><a href="tools/quiet-routine/index.html">Open Quiet Routine <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></li><li class="tile"><div class="win" style="--bg:#f7f1e1"><img class="wide" src="img/tools/pl.webp" alt="" loading="lazy"></div><div class="meta"><h2>Planner</h2><p>Your week in one calm view: tasks, days and time blocks.</p><a href="tools/planner.html">Open Planner <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></li></ul>
+  <section class="note">
+    <p class="kick">Your data</p>
+    <p>Everything you add stays in your own browser, on your own device. Nothing comes to me. LatLong and Quiet Routine can export a backup file, so save one now and then.</p>
+  </section>
+</main>
+
+<footer><a class="mark" href="index.html" aria-label="MYusings home"><svg aria-hidden="true"><use href="#logo"/></svg><span class="wm"><b>MY</b>usings</span></a><span>© 2026 Manisha Yadav. Grown slowly at myusings.com</span></footer>
+</body>
+</html>
