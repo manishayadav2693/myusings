@@ -75,12 +75,12 @@ hr.acc{border-top-color:var(--ink);width:56px;margin-bottom:-1px;position:relati
   <nav aria-label="Sections"><a href="about.html" aria-current="page">About</a><a href="musings.html">Musings</a><a href="tools.html">Tools</a><a href="inseason.html">In season</a><a href="hello.html">Say hello</a></nav>
 </header>
 
-<section class="banner"><div class="txt"><p class="label"><i>Papaver rhoeas</i> · first leaves</p><h1>About</h1><p class="lede"><b>MY</b> is Manisha Yadav. The musings are mine.</p></div><img class="plant" src="img/stage-leaves.webp" alt="A watercolour poppy, first leaves"></section>
+<section class="banner"><div class="txt"><p class="label"><i>Papaver rhoeas</i> · first leaves</p><h1>About</h1><p class="lede"><b>MY</b> is Manisha Yadav. The musings are mine.</p></div><img class="plant" src="stage-leaves.webp" alt="A watercolour poppy, first leaves"></section>
 
 <main class="wrap">
   <section class="row" style="grid-template-columns:minmax(0,1fr)">
     <div class="lead">
-      <figure class="photo"><div class="frame" id="frame"><img class="me" id="me" src="img/manisha.jpg" alt="Manisha Yadav"></div><figcaption id="cap" hidden>Portrait to come</figcaption></figure>
+      <figure class="photo"><div class="frame" id="frame"><img class="me" id="me" src="manisha.jpg" alt="Manisha Yadav"></div><figcaption id="cap" hidden>Portrait to come</figcaption></figure>
       <div class="copy">
         <p class="kick">In short</p>
         <p class="open">I notice things. Then I can’t stop thinking about them until they’re written down.</p>
@@ -112,7 +112,7 @@ hr.acc{border-top-color:var(--ink);width:56px;margin-bottom:-1px;position:relati
 <footer><a class="mark" href="index.html" aria-label="MYusings home"><svg aria-hidden="true"><use href="#logo"/></svg><span class="wm"><b>MY</b>usings</span></a><span>© 2026 Manisha Yadav. Grown slowly at myusings.com</span></footer>
 <script>
 {
-const me=document.getElementById('me'),noPic=()=>{const i=new Image();i.className='ph';i.alt='';i.src='img/poppy-bloom.webp';me.replaceWith(i);document.getElementById('cap').hidden=false};
+const me=document.getElementById('me'),noPic=()=>{const i=new Image();i.className='ph';i.alt='';i.src='poppy-bloom.webp';me.replaceWith(i);document.getElementById('cap').hidden=false};
 if(me.complete&&!me.naturalWidth)noPic();else me.addEventListener('error',noPic);
 }
 </script>
