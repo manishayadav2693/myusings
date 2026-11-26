@@ -23,41 +23,6 @@ window.POSTS=[
 {h:"So, what does it take?"},
 {p:"What it takes, I’ve come to think, is consideration. It’s a small act of imagination: holding in your mind, even for a few minutes, that the people around you are as real as you are, and that the time they’ve already spent standing there counts as much as yours. The people on my map aren’t short of time. They’re short of that imagination."},
 {p:"I’ll admit I may have taken this too far, once. I missed a flight because I didn’t want to break a queue, which is, I’ll grant you, an extreme, possibly a personality flaw, and definitely something my therapist might want to discuss."},
-{p:"The man at Delhi airport got through security just ahead of me that Tuesday. He was through in thirty seconds. I wrote an essay."}]},
-{slug:'what-a-poppy-knows-about-patience',title:'What a poppy knows about patience',date:'November 2026',iso:'2026-11-18',topic:'Seasons',excerpt:'On seasons that look like nothing is happening, and everything is.',body:[
-{p:'Every November I notice the same thing: the garden looks finished. The beds are bare, the light goes early, and it is easy to believe nothing is happening.'},
-{p:'Poppies disagree. A poppy seed can sit in the soil for years, waiting for the ground to be turned and the light to reach it. When it finally moves, it does not hurry. First a pair of plain leaves, then the grey-green rosette, then a bud that hangs its head for days, as if it is still deciding whether to open at all.'},
-{h:'The nodding bud'},
-{p:'That bowed head is the part I keep returning to. The bud is not drooping. It is protecting what is inside until it is ready, and then, in a single morning, it straightens, splits, and the petals come out crumpled, like silk folded too long in a drawer.'},
-{q:'Most of a poppy\'s life happens where no one is looking.'},
-{p:'My work moves like this too. A programme spends months in meetings, data checks and quiet corrections before anyone outside sees a change. It is tempting to count those months as nothing. They are the roots.'},
-{fig:'stages',cap:'The same plant across three weeks: nodding, opening, open.'},
-{h:'What I am trying to practise'},
-{ul:['Notice the slow work, and name it out loud.','Let an idea nod for a while before forcing it open.','Treat a bare season as soil being turned, not time lost.']},
-{p:'The bloom itself lasts a day or two. Then the petals drop, and what is left is the pod, holding hundreds of seeds for a season that has not started yet. Patience, it turns out, is not waiting. It is getting ready.'}]},
-{slug:'the-colour-of-a-good-meeting',title:'The colour of a good meeting',date:'October 2026',iso:'2026-10-21',topic:'Work',excerpt:'Why some rooms feel ochre and others feel grey, and what changes them.',body:[
-{p:'I have started noticing the colour of rooms. Not the paint. The feeling.'},
-{p:'Some meetings are grey: everyone has read the deck, nobody has read each other, and the decision was made before we sat down. Some are ochre: warm, a little dusty, full of people who have known each other for years and can disagree without anyone keeping score.'},
-{q:'The best meetings I have been in change colour halfway through.'},
-{p:'It usually happens when someone senior asks a real question instead of a rhetorical one, or when the person closest to the field is invited to speak first. The room warms. People lean in. The notes get messier.'},
-{p:'I do not have a method yet. I have a habit: before I walk in, I ask what colour I want the room to be when we leave, and what I can do in the first five minutes to start it there.'}]},
-{slug:'building-tools-for-one',title:'Building tools for one',date:'September 2026',iso:'2026-09-09',topic:'Building',excerpt:'Small software, made for my own hands first.',body:[
-{p:'Most software is built for millions of people. The tools I like best were built for one.'},
-{p:'LatLong, Quiet Routine and Planner all started the same way: a small annoyance I met every day, and an evening when I decided to stop working around it.'},
-{p:'Building for one is freeing. There is no onboarding, no settings page, no growth plan. If something feels wrong, I change it before breakfast.'},
-{q:'When you are the only user, every rough edge is a note to yourself.'},
-{p:'Some of these tools may grow beyond me. Most will not, and that is fine. They have already done their job: they made my days a little quieter.'}]},
-{slug:'a-notebook-of-colours',title:'A notebook of colours',date:'August 2026',iso:'2026-08-14',topic:'Colour',excerpt:'A month of keeping a diary in paint instead of words.',body:[
-{p:'For one month I kept a diary without words. Each evening I painted a single swatch for the day, in whatever colour it had felt like.'},
-{fig:'swatches',cap:'Ten days from the notebook.'},
-{p:'By the end, the page told me things my written journal never had. Mondays were almost always blue-grey. Days in the field were green, even the tiring ones. The brightest red of the month was an ordinary Thursday, when a small thing finally worked.'},
-{p:'I am keeping it going. It takes two minutes, and it is the most honest record I have.'}]},
-{slug:'what-selling-soap-taught-me',title:'What selling soap taught me about public systems',date:'July 2026',iso:'2026-07-02',topic:'Work',excerpt:'A plan only becomes real when it reaches the last shelf.',body:[
-{p:'Before I worked on public systems, I sold soap. Three years at Hindustan Unilever, moving between modern trade and the small shops of general trade.'},
-{p:'It sounds like a long way from government programmes. It is closer than it looks.'},
-{h:'The shelf is the truth'},
-{p:'In sales you learn quickly that a plan in an office means nothing until it is on the shelf, at the right price, where someone can reach it. Public programmes are the same. A scheme is only real when it reaches the person it was written for.'},
-{q:'Distribution is a kind of care.'},
-{p:'I still think like a sales manager in many meetings. Who is the last person in this chain? What do they need to say yes? What would make it easier tomorrow than today?'}]}
+{p:"The man at Delhi airport got through security just ahead of me that Tuesday. He was through in thirty seconds. I wrote an essay."}]}
 ];
 window.POSTS.forEach(p=>{const w=p.body.map(b=>b.p||b.q||b.h||(b.ul||[]).join(' ')||'').join(' ').split(/\s+/).length;p.mins=Math.max(1,Math.ceil(w/200))});

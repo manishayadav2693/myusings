@@ -41,7 +41,6 @@ h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;letter-s
 .hero h1{font-size:clamp(60px,9.5vw,128px);line-height:.98;font-weight:330}
 .hero p{margin:0;max-width:31em;color:var(--soft);font-size:18px}
 .hero .note{font-size:14px}
-.sprig{position:absolute;top:0;right:max(3vw,12px);width:clamp(150px,17vw,240px);height:auto;pointer-events:none}
 .meadow{position:relative;width:100%;height:240px;margin-top:clamp(20px,5vh,60px)}
 .meadow svg,.meadow canvas{position:absolute;left:0;bottom:0;width:100%;display:block;pointer-events:none}
 .meadow svg{height:200px}
@@ -52,8 +51,8 @@ h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;letter-s
 @keyframes psway{0%,100%{transform:rotate(-1deg)}50%{transform:rotate(1.4deg)}}
 @media(prefers-reduced-motion:reduce){.sw,#swayg{animation:none}}
 .story{position:relative}
-.ch{position:relative;z-index:1;padding:clamp(56px,10vw,140px) max(5vw,16px);display:flex;flex-direction:column;justify-content:center;gap:22px}
-.ch>*{max-width:500px}
+.ch{position:relative;z-index:1;padding:clamp(56px,10vw,140px) max(5vw,16px);display:flex;flex-direction:column;justify-content:flex-start;gap:22px}
+.ch>*{max-width:640px}
 .ch h2{font-size:clamp(34px,3.6vw,46px)}
 .ch h2::before{content:"";display:block;width:46px;height:22px;margin-bottom:16px;background:radial-gradient(circle at 22% 55%,var(--scarlet) 0 6px,transparent 7.5px),radial-gradient(circle at 52% 35%,color-mix(in srgb,var(--scarlet) 55%,#fff) 0 3.5px,transparent 5px),radial-gradient(circle at 74% 70%,var(--scarlet) 0 2px,transparent 3px),radial-gradient(circle at 92% 30%,color-mix(in srgb,var(--scarlet) 70%,#fff) 0 1.4px,transparent 2.4px);opacity:.85}
 .ch p{margin:0}
@@ -63,11 +62,11 @@ h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;letter-s
 .when{font-size:14px;color:var(--soft);white-space:nowrap}
 .rows h3{font-size:28px;font-weight:500}
 .rows h3 a{text-decoration:none}
-.rows h3 a:hover{color:var(--violet)}
+.rows h3 a:hover{color:var(--scarlet)}
 .rows p{color:var(--soft)}
 .tool{grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:24px}
 .tool h3{display:flex;gap:12px;align-items:center}
-.tool h3 i{width:16px;height:14px;border-radius:52% 48% 55% 45%;flex:none;background:radial-gradient(circle at 60% 65%,var(--c),color-mix(in srgb,var(--c) 45%,#fff));opacity:.9}
+.tool h3 i{width:16px;height:14px;border-radius:52% 48% 55% 45%;flex:none;background:radial-gradient(circle at 60% 65%,var(--c),color-mix(in srgb,var(--c) 45%,#fff));opacity:var(--o,.9)}
 .tool .pill{grid-row:1 / span 2;grid-column:2;min-height:40px;padding:0 16px}
 .now{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:16px 32px;margin:0}
 .now dt{font:400 19px/1.5 'Cormorant Garamond',Georgia,serif;white-space:nowrap}
@@ -87,7 +86,7 @@ h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;letter-s
 footer{position:relative;z-index:3;background:#fff;display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between;padding:36px max(4vw,16px) 44px;font-size:14px;color:var(--soft);border-top:1px solid var(--hair)}
 footer .mark svg{width:30px;height:30px}
 @media(max-width:699px){.ch{min-height:70svh}}
-@media(max-width:999px){.now{grid-template-columns:minmax(0,1fr);gap:2px}.now dd{margin-bottom:14px}.sprig{display:none}}
+@media(max-width:999px){.now{grid-template-columns:minmax(0,1fr);gap:2px}.now dd{margin-bottom:14px}}
 @media(max-width:600px){.tool{grid-template-columns:minmax(0,1fr)}.tool .pill{grid-row:auto;grid-column:auto;justify-self:start;margin-top:6px}.top{padding-bottom:6px}.top nav{width:100%;gap:2px 18px;font-size:14px}.top nav a{padding:8px 0}}
 @media(min-width:700px){
 .scene{display:block;position:absolute;inset:0;pointer-events:none}
@@ -98,8 +97,8 @@ footer .mark svg{width:30px;height:30px}
 .front{pointer-events:none}
 #art{left:50%;width:50%}
 #near{display:block}
-.ch{margin-left:190px;width:min(500px,calc(56vw - 214px));min-height:100vh;padding:120px 0}
-#art{left:56%;width:44%}
+.ch{margin-left:190px;width:min(600px,calc(64vw - 214px));min-height:100vh;padding:14vh 0 120px}
+#art{left:64%;width:36%}
 .index{display:block;position:absolute;left:max(3vw,24px);top:50%;transform:translateY(-50%);pointer-events:auto}
 .index a{display:flex;gap:10px;align-items:center;padding:7px 0;font-size:14px;color:var(--soft);text-decoration:none}
 .index a::before{content:"";height:1px;width:10px;background:currentColor;flex:none;opacity:.5;transition:width .35s ease,opacity .35s ease}
@@ -107,7 +106,7 @@ footer .mark svg{width:30px;height:30px}
 .index a.on{color:var(--ink)}
 .index a.on::before{width:22px;opacity:1;background:var(--ink)}
 .cap{left:auto;right:max(3vw,24px);top:30px;font-size:19px}}
-@media(min-width:1100px){.ch{margin-left:clamp(200px,15vw,250px);width:min(500px,33vw)}#art{left:50%;width:50%}.index a{font-size:15px}.index a.on::before{width:34px}}
+@media(min-width:1100px){.ch{margin-left:clamp(200px,15vw,250px);width:min(640px,44vw)}#art{left:60%;width:40%}.index a{font-size:15px}.index a.on::before{width:34px}}
 </style>
 </head>
 <body>
@@ -135,7 +134,6 @@ footer .mark svg{width:30px;height:30px}
 </header>
 
 <section class="hero" id="top">
-  <svg class="sprig" id="sprig" viewBox="0 0 260 330" aria-hidden="true"></svg>
   <h1><b>MY</b>usings</h1>
   <p>Notes on life, seen in colour: observations on society, fitness, and the things I build.</p>
   <a class="pill dark" href="musings.html">Read the musings <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -194,9 +192,9 @@ footer .mark svg{width:30px;height:30px}
   <section class="ch" id="tools" style="--a:#ff4f9a">
     <h2>Things I've made</h2>
     <ul class="rows">
-      <li class="tool" style="--c:#f2210f"><h3><i></i>LatLong</h3><p>Places, pinned to their coordinates.</p><a class="pill" href="latlong.html">Open</a></li>
-      <li class="tool" style="--c:#3faa4a"><h3><i></i>Quiet Routine</h3><p>Gentle structure for the days that need it.</p><a class="pill" href="quiet-routine.html">Open</a></li>
-      <li class="tool" style="--c:#8b45c9"><h3><i></i>Planner</h3><p>The week ahead, in one calm view.</p><a class="pill" href="planner.html">Open</a></li>
+      <li class="tool" style="--c:#f2210f;--o:1"><h3><i></i>LatLong</h3><p>A travel journal for every country, city, trip and place.</p><a class="pill" href="latlong.html">Open</a></li>
+      <li class="tool" style="--c:#f2210f;--o:.55"><h3><i></i>Quiet Routine</h3><p>Fitness and habits, tracked quietly, one week at a time.</p><a class="pill" href="quiet-routine.html">Open</a></li>
+      <li class="tool" style="--c:#f2210f;--o:.28"><h3><i></i>Planner</h3><p>Your week in one calm view: tasks, days and time blocks.</p><a class="pill" href="planner.html">Open</a></li>
     </ul>
   </section>
 
@@ -216,7 +214,7 @@ footer .mark svg{width:30px;height:30px}
     <p class="quiet">Write to me about an idea, a colour, or something you've built. I read everything, slowly.</p>
     <p class="mail"><a href="mailto:hello@myusings.com">hello@myusings.com</a></p>
     <p class="sign">— Manisha</p>
-    <p class="links"><a class="pill" href="https://www.linkedin.com/">LinkedIn</a><a class="pill" href="musings.html">Musings</a><a class="pill" href="#tools">Tools</a></p>
+    <p class="links"><a class="pill" href="https://www.linkedin.com/in/manisha-yadav8/" target="_blank" rel="noopener">LinkedIn</a><a class="pill" href="musings.html">Musings</a><a class="pill" href="#tools">Tools</a></p>
   </section>
 </main>
 
@@ -339,16 +337,7 @@ const place=(g,href,[bx,by,bw,bh])=>{if(!href||!g)return;const w=g.querySelector
 const FL=[];let fl='';for(let i=0;i<36;i++){FL.push({dx:(rnd()-.5)*320,ye:543+rnd()*10,h:30+rnd()*90,dl:rnd()*.3});fl+='<circle r="'+f1(1.1+rnd()*.9)+'"/>'}
 $('fly').innerHTML=fl;
 
-/* ---------- hero: a scarlet sprig in the corner ---------- */
-{let h='<defs><linearGradient id="lg2" x1="0" x2="1"><stop offset="0" stop-color="#5f7d4e"/><stop offset="1" stop-color="#c3d1a6"/></linearGradient><linearGradient id="sg" x1="0" x2="1"><stop offset="0" stop-color="#b80d05"/><stop offset=".6" stop-color="#f2210f"/><stop offset="1" stop-color="#ff6a45"/></linearGradient></defs><g '+INK+' stroke="#5b3a2a" stroke-width="1.3">';
-['M150 -4C148 40 140 70 128 96C110 130 96 170 92 214','M134 84C160 96 190 104 222 110','M112 140C90 150 62 158 36 160','M100 186C118 210 132 236 140 268'].forEach(d=>h+='<path d="'+d+'"/>');h+='</g>';
-const leaf=(x,y,r,L,W)=>wc(mv(rot([[0,0],[L*.3,-W],[L*.72,-W*.75],[L,0],[L*.7,W*.7],[L*.28,W*.85]],r),x,y),'url(#lg2)','.9',{cut:1})+'<path d="'+cr(mv(rot([[2,0],[L*.5,-1],[L-3,0]],r),x,y),true)+'" '+INK+' stroke-width=".5" opacity=".6"/>';
-h+=leaf(128,96,200,58,17)+leaf(118,120,150,46,14)+leaf(150,40,-30,40,12);
-const bract=(x,y,r,L,W)=>{const p=mv(rot([[0,0],[L*.25,-W*.9],[L*.65,-W],[L,-W*.2],[L*.8,W*.6],[L*.35,W*.8]],r),x,y);const v=mv(rot([[1,0],[L*.5,-W*.15],[L*.9,-W*.1]],r),x,y);return wc(p,'url(#sg)','.92',{second:'#ff7a5c',sop:.35,cut:2})+'<path d="'+cr(v,true)+'" '+INK+' stroke-width=".45" opacity=".6"/>'};
-const cluster=(x,y,a)=>bract(x,y,a-40,40,20)+bract(x,y,a+10,44,22)+bract(x,y,a+60,36,18);
-h+=cluster(222,110,0)+cluster(36,160,175)+cluster(140,268,80)+cluster(92,214,120);
-h+=dots(10,150,180,110,120,['#f2210f','#ff4a2a','#c40f06'],2);
-$('sprig').innerHTML=h;}
+
 
 /* ---------- hero meadow: grass in the wind ---------- */
 const HP=[[230,.8],[420,1],[455,.7],[760,1.1],[800,.75],[1010,.9]];
